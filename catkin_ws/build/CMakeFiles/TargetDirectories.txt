@@ -28,6 +28,14 @@
 /home/udacity-workspace-backup/catkin_ws/build/gtest/gtest/CMakeFiles/install/local.dir
 /home/udacity-workspace-backup/catkin_ws/build/gtest/gtest/CMakeFiles/test.dir
 /home/udacity-workspace-backup/catkin_ws/build/gtest/gtest/CMakeFiles/install/strip.dir
+/home/udacity-workspace-backup/catkin_ws/build/first_package/CMakeFiles/install.dir
+/home/udacity-workspace-backup/catkin_ws/build/first_package/CMakeFiles/install/strip.dir
+/home/udacity-workspace-backup/catkin_ws/build/first_package/CMakeFiles/rebuild_cache.dir
+/home/udacity-workspace-backup/catkin_ws/build/first_package/CMakeFiles/_catkin_empty_exported_target.dir
+/home/udacity-workspace-backup/catkin_ws/build/first_package/CMakeFiles/edit_cache.dir
+/home/udacity-workspace-backup/catkin_ws/build/first_package/CMakeFiles/list_install_components.dir
+/home/udacity-workspace-backup/catkin_ws/build/first_package/CMakeFiles/test.dir
+/home/udacity-workspace-backup/catkin_ws/build/first_package/CMakeFiles/install/local.dir
 /home/udacity-workspace-backup/catkin_ws/build/simple_arm/CMakeFiles/rebuild_cache.dir
 /home/udacity-workspace-backup/catkin_ws/build/simple_arm/CMakeFiles/install/local.dir
 /home/udacity-workspace-backup/catkin_ws/build/simple_arm/CMakeFiles/test.dir
@@ -39,6 +47,7 @@
 /home/udacity-workspace-backup/catkin_ws/build/simple_arm/CMakeFiles/std_msgs_generate_messages_nodejs.dir
 /home/udacity-workspace-backup/catkin_ws/build/simple_arm/CMakeFiles/controller_manager_msgs_generate_messages_eus.dir
 /home/udacity-workspace-backup/catkin_ws/build/simple_arm/CMakeFiles/std_msgs_generate_messages_lisp.dir
+/home/udacity-workspace-backup/catkin_ws/build/simple_arm/CMakeFiles/simple_mover.dir
 /home/udacity-workspace-backup/catkin_ws/build/simple_arm/CMakeFiles/controller_manager_msgs_generate_messages_lisp.dir
 /home/udacity-workspace-backup/catkin_ws/build/simple_arm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir
 /home/udacity-workspace-backup/catkin_ws/build/simple_arm/CMakeFiles/std_msgs_generate_messages_cpp.dir
