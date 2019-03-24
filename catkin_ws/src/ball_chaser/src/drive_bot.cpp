@@ -21,7 +21,12 @@ bool handle_drive_request(ball_chaser::DriveToTarget::Request &req,
         motor_command.angular.z = req.angular_z;
         // Publish angles to drive the robot
         motor_command_publisher.publish(motor_command);
-	res.msg_feedback = "Linear X = %ld
+
+        // Handle ROS communication events
+        std::stringstream ss;
+        ss << "Linear X = " << req.linear_x << " Angular Z = " << req.angular_z;
+        res.msg_feedback = ss.str();
+        ROS_INFO("%s", res.msg_feedback.c_str());
     }
     return true;
 }
@@ -38,10 +43,7 @@ int main(int argc, char** argv)
 
     // Define a drive /ball_chaser/command_robot service with a handle_drive_request callback function
     ros::ServiceServer command_robot = n.advertiseService("drive_bot", handle_drive_request);
-
-
-    // Handle ROS communication events
-    ROS_INFO("Waiting for motor commands...");
+    ROS_INFO("Waiting for motor command...")
     ros::spin();
 
     return 0;
