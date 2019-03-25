@@ -37,7 +37,7 @@ int main(int argc, char** argv)
     ros::NodeHandle n;
 
     // Create publisher object
-    motor_command_publisher = n.advertise<geometry_msgs::Twist>("/ball_chaser/motor_command", 10);
+    motor_command_publisher = n.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
 
     // Define a drive /ball_chaser/command_robot service with a handle_drive_request callback function
     ros::ServiceServer command_robot = n.advertiseService("/ball_chaser/command_robot", handle_drive_request);
