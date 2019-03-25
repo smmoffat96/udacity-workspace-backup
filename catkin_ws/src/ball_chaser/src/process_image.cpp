@@ -71,6 +71,7 @@ public:
 
 
 
+
 // This callback function continuously executes and reads the image data
 void process_image_callback(const sensor_msgs::Image img)
 {
@@ -78,29 +79,32 @@ void process_image_callback(const sensor_msgs::Image img)
     int white_pixel = 255;
     int white_pixel_count = 0;
 
-    // TODO: Loop through each pixel in the image and check if there's a bright white one
+    // Loop through each pixel in the image and check if there's a bright white one
     // Then, identify if this pixel falls in the left, mid, or right side of the image
     // Depending on the white ball position, call the drive_bot function and pass velocities to it
     // Request a stop when there's no white ball seen by the camera
 
-    for (int i = 0; i < cv_ptr->img.cols; i++) {
-        for (int j = 0; j < cv_ptr->img.rows; j++) {
+    for (int i = 0; i < width; i++) {
+        for (int j = 0; j < height; j++) {
             rgbpix = cv_ptr->img.at<cv::Vec3b>(j, i);
-            redval = rgbpix[2];
-            blueval = rgbpix[0];
-            greenval = rgbpix[1];
             // Determine if the pixel is white
-            if (redval=white_pixel && blueval=white_pixel && greenval=white_pixel) {
+            if (rgbpix == [white_pixel, white_pixel, white_pixel]) {
                 white_pixel_count++;
                 // if left side of image, turn left
-                    // lin_x = 0.0;
-                    // ang_z = 0.5;
-                // if right side of image, turn right
-                    // lin_x = 0.0;
-                    // ang_z = -0.5;
+                if (i < (step/3)) {
+                    lin_x = 0.0;
+                    ang_z = 0.5;
+                }
                 // if middle of image, drive forward
-                    // lin_x = 0.5;
-                    // ang_z = 0.0;
+                else if (i < (2*step/3)) {
+                    lin_x = 0.5;
+                    ang_z = 0.0;
+                }
+                // if right side of image, turn right
+                else if (i < step) {
+                    lin_x = 0.0;
+                    ang_z = -0.5;
+                }
             }
         }
     }
