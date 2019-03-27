@@ -10,3 +10,4 @@ cd /home/udacity-workspace-backup
 sudo apt-get update && sudo apt-get upgrade -y
 
 export GAZEBO_MODEL_PATH=/home/udacity-workspace-backup/
+export OPENCV_DIR=/home/udacity-workspace-backup/
