@@ -1,5 +1,5 @@
-#include "stdafx.h"
-#include <opencv2/opencv.hpp>
+//#include "stdafx.h"
+#include </home/udacity-workspace-backup/opencv/include/opencv2/opencv.hpp>
 #include <iostream>
 #include <string>
 
