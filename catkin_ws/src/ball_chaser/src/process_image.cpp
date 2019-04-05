@@ -10,7 +10,6 @@
 ros::ServiceClient client;
 
 // This function calls the command_robot service to drive the robot in the specified direction
-
 void drive_robot(float lin_x, float ang_z)
 {
     // Request a service and pass the velocities to it to drive the robot
@@ -22,8 +21,8 @@ void drive_robot(float lin_x, float ang_z)
 // Name of OpenCV image
 static const std::string OPENCV_WINDOW = "Image window";
 
+// This function takes in an OpenCV image in BGR color channels and outputs to a window
 void view_image(const cv::Mat img) {
-    // This function takes in an OpenCV image in BGR color channels and outputs to a window
     cv::namedWindow(OPENCV_WINDOW);
     cv::imshow(OPENCV_WINDOW, img);
     cv::waitKey(3);
@@ -36,15 +35,21 @@ void process_image_callback(const sensor_msgs::Image img)
     float ang_z;
     cv::Vec3b rgbpix;
     
+    // Converts ROS image message into OpenCV image
     cv_bridge::CvImagePtr cv_ptr;
     cv_ptr = cv_bridge::toCvCopy(img, sensor_msgs::image_encodings::BGR8);
     cv::Mat cv_img = cv_ptr->image;
     
+    // View image in new window
     view_image(cv_img);
     
+    // Parameters of image
     int height = cv_img.rows;
     int width = cv_img.cols;
     int step = 0;
+    
+    //////////////////////////////////////////////////////////////////////
+    // USE HOUGH CIRCLE TRANSFORM TO DETECT WHITE BALL
     
     // Convert image to gray scale
     cv::Mat gray;
@@ -53,7 +58,7 @@ void process_image_callback(const sensor_msgs::Image img)
     
     // Apply Hough Circle Transform to detect circles
     std::vector<cv::Vec3f> circles;
-    cv::HoughCircles(gray, circles, cv::HOUGH_GRADIENT, 1, gray.rows/8, 200, 100, 0, 0);
+    cv::HoughCircles(gray, circles, cv::HOUGH_GRADIENT, 1, gray.rows/16, 200, 100, 0, 0);
     
     // Go to each detected circle to determine if it is the white ball
     for( size_t i = 0; i < circles.size(); i++) {
@@ -97,9 +102,8 @@ void process_image_callback(const sensor_msgs::Image img)
             ang_z = 0.0;
         }
     }
-    
+    // Pass velocity parameters to drive_robot
     drive_robot(lin_x, ang_z);
-
 }
 
 
