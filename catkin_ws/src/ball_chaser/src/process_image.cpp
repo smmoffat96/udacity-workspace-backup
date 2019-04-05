@@ -14,8 +14,11 @@ void drive_robot(float lin_x, float ang_z)
 {
     // Request a service and pass the velocities to it to drive the robot
     ball_chaser::DriveToTarget srv;
+
     srv.request.linear_x = lin_x;
     srv.request.angular_z = ang_z;
+
+    client.call(srv);
 }
 
 // Name of OpenCV image
@@ -35,7 +38,7 @@ void process_image_callback(const sensor_msgs::Image img)
     float ang_z;
     cv::Vec3b rgbpix;
     
-    // Converts ROS image message into OpenCV image
+    // Convert ROS image message into OpenCV image
     cv_bridge::CvImagePtr cv_ptr;
     cv_ptr = cv_bridge::toCvCopy(img, sensor_msgs::image_encodings::BGR8);
     cv::Mat cv_img = cv_ptr->image;
@@ -61,9 +64,10 @@ void process_image_callback(const sensor_msgs::Image img)
     cv::HoughCircles(gray, circles, cv::HOUGH_GRADIENT, 1, gray.rows/16, 200, 100, 0, 0);
     
     // Go to each detected circle to determine if it is the white ball
+
     for( size_t i = 0; i < circles.size(); i++) {
         
-        // Get position of center pixel of circle
+        // Get position of centroid
         int x_pos = cvRound(circles[i][0]);
         int y_pos = cvRound(circles[i][1]);
         cv::Point center = cv::Point(x_pos, y_pos);
@@ -102,6 +106,7 @@ void process_image_callback(const sensor_msgs::Image img)
             ang_z = 0.0;
         }
     }
+
     // Pass velocity parameters to drive_robot
     drive_robot(lin_x, ang_z);
 }
