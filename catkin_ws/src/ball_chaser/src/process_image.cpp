@@ -44,9 +44,6 @@ void process_image_callback(const sensor_msgs::Image img)
     int height = cv_img.rows;
     int width = cv_img.cols;
     int step = 0;
-    
-    int white_pixel = 255;
-    int white_pixel_count = 0;
 
     // Loop through each pixel in the image and check if there's a bright white one
     // Then, identify if this pixel falls in the left, mid, or right side of the image
