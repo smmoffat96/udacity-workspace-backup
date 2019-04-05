@@ -51,6 +51,46 @@ void process_image_callback(const sensor_msgs::Image img)
     int width = cv_img.cols;
     int step = 0;
     
+    ////////////////////////////////////////////////////
+    // USE THRESHOLD AND BLOB TO DETECT WHITE BALL
+
+    // Convert image to gray scale
+    cv::Mat gray;
+    cv::cvtColor(cv_img, gray, cv::COLOR_BGR2GRAY);
+    cv::medianBlur(gray, gray, 5);
+
+    // Set threshold and maxValue
+    double thresh = 240;
+    double maxValue = 255;
+
+    // Binary Threshold
+    cv::Mat binary;
+    cv::threshold(gray, binary, thresh, maxValue, cv::THRESH_BINARY);
+
+    // Find moments of the image
+    cv::Moments m = cv::moments(binary, true);
+    // Position of centroid
+    cv::Point p(m.m10/m.m00, m.m01/m.m00);
+
+    // Show image with point mark at center
+    //cv::circle(cv_img, p, 5, cv::Scalar(128,0,0), -1);
+    //view_image(cv_img);
+
+    if (p.x <= width/3) {
+        lin_x = 0.0;
+        ang_z = 0.5;
+    }
+    else if (p.x <= 2*width/3) {
+        lin_x = 0.5;
+        ang_z = 0.0;
+    }
+    else if (p.x <= width) {
+        lin_x = 0.0;
+        ang_z = -0.5;
+    }
+    
+
+/*
     //////////////////////////////////////////////////////////////////////
     // USE HOUGH CIRCLE TRANSFORM TO DETECT WHITE BALL
     
@@ -61,10 +101,9 @@ void process_image_callback(const sensor_msgs::Image img)
     
     // Apply Hough Circle Transform to detect circles
     std::vector<cv::Vec3f> circles;
-    cv::HoughCircles(gray, circles, cv::HOUGH_GRADIENT, 1, gray.rows/16, 200, 100, 0, 0);
+    //cv::HoughCircles(gray, circles, cv::HOUGH_GRADIENT, 1, gray.rows/16, 200, 100, 0, width/3);
     
     // Go to each detected circle to determine if it is the white ball
-
     for( size_t i = 0; i < circles.size(); i++) {
         
         // Get position of centroid
@@ -106,6 +145,7 @@ void process_image_callback(const sensor_msgs::Image img)
             ang_z = 0.0;
         }
     }
+*/
 
     // Pass velocity parameters to drive_robot
     drive_robot(lin_x, ang_z);
