@@ -62,8 +62,8 @@ void process_image_callback(const sensor_msgs::Image img)
     for (size_t i=0; i<circles.size(); i++) {
         cv::Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
         int radius = cvRound(circles[i][2]);
-        circle(cv_img, center, 3, cv::Scalar(0,255,0), -1, 8, 0);
-        circle(cv_img, center, radius, Scalar(0,0,255), 3, 8, 0);
+        cv::circle(cv_img, center, 3, cv::Scalar(0,255,0), -1, 8, 0);
+        cv::circle(cv_img, center, radius, Scalar(0,0,255), 3, 8, 0);
     }
     
     view_image(cv_img);
