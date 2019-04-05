@@ -41,9 +41,8 @@ void process_image_callback(const sensor_msgs::Image img)
     
     view_image(cv_img);
     
-    // Initialize window parameters with placeholders
-    int height = 10;
-    int width = 10;
+    int height = cv_img.rows;
+    int width = cv_img.cols;
     int step = 0;
     
     int white_pixel = 255;
@@ -53,38 +52,57 @@ void process_image_callback(const sensor_msgs::Image img)
     // Then, identify if this pixel falls in the left, mid, or right side of the image
     // Depending on the white ball position, call the drive_bot function and pass velocities to it
     // Request a stop when there's no white ball seen by the camera
-
-    for (int i = 0; i < width; i++) {
-        for (int j = 0; j < height; j++) {
-            rgbpix = cv_ptr->img.at<cv::Vec3b>(j, i);
-            // Determine if the pixel is white
-            if (rgbpix == [white_pixel, white_pixel, white_pixel]) {
-                white_pixel_count++;
-                // if left side of image, turn left
-                if (i < (step/3)) {
-                    lin_x = 0.0;
+    
+    // Convert image to gray scale
+    cv::Mat gray;
+    cv::cvtColor(cv_img, gray, COLOR_BGR2GRAY);
+    cv::medianBlur(gray, gray, 5);
+    
+    // Apply Hough Circle Transform to detect circles
+    vector<Vec3f> circles;
+    cv::HoughCircles(gray, circles, HOUGH_GRADIENT, 1, gray.rows/8, 200, 100, 0, 0);
+    for( size_t i = 0; i < circles.size(); i++) {
+        
+        // Get position of center pixel of circle
+        int x_pos = cvRound(circles[i][0]);
+        int y_pos = cvRound(circles[i][1]);
+        Point center = Point(x_pos, y_pos);
+        
+        // Check if center pixel is white
+        Scalar intensity = img.at<uchar>(center);
+        if (intensity >= 240) {
+            // Find radius of circle
+            int radius = cvRound(circles[i][2]);
+            // If too big (ball is too close), stop driving
+            if ((radius > width/3) || (radius > height/3)) {
+                lin_x = 0;
+                ang_z = 0;
+            }
+            else {
+                // If left side, turn left
+                if (x_pos <= width/3) {
+                    lin_x = 0;
                     ang_z = 0.5;
                 }
-                // if middle of image, drive forward
-                else if (i < (2*step/3)) {
+                // If middle, drive forward
+                else if (x_pos <= 2*width/3) {
                     lin_x = 0.5;
-                    ang_z = 0.0;
+                    ang_z = 0;
                 }
-                // if right side of image, turn right
-                else if (i < step) {
-                    lin_x = 0.0;
+                // If right, turn right
+                else if (x_pos <= width) {
+                    lin_x = 0;
                     ang_z = -0.5;
                 }
             }
         }
+        // If there are no white pixels, stop driving
+        else {
+            lin_x = 0;
+            ang_z = 0;
+        }
     }
-    // if no white pixels, stop driving
-    if (white_pixel_count == 0) {
-        lin_x = 0.0;
-        ang_z = 0.0;
-    }
-    // if lots of white pixels, stop driving
-
+    drive_robot(lin_x, ang_z);
 }
 
 int main(int argc, char** argv)
