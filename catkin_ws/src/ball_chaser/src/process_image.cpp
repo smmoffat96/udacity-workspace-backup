@@ -25,7 +25,7 @@ void view_image(const cv::Mat img) {
     // This function takes in an OpenCV image in BGR color channels and outputs to a window
     cv::namedWindow(OPENCV_WINDOW);
     cv::imshow(OPENCV_WINDOW, img);
-    //WaitKey(3);
+    waitKey(3);
 }
 
 // This callback function continuously executes and reads the image data
@@ -58,6 +58,18 @@ void process_image_callback(const sensor_msgs::Image img)
     // Apply Hough Circle Transform to detect circles
     std::vector<cv::Vec3f> circles;
     cv::HoughCircles(gray, circles, cv::HOUGH_GRADIENT, 1, gray.rows/8, 200, 100, 0, 0);
+    
+    for (size_t i=0; i<circles.size(); i++) {
+        cv::Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
+        int radius = cvRound(circles[i][2]);
+        circle(cv_img, center, 3, cv::Scalar(0,255,0), -1, 8, 0);
+        circle(cv_img, center, radius, Scalar(0,0,255), 3, 8, 0);
+    }
+    
+    view_image(cv_img);
+    
+    /*
+    // Go to each detected circle to determine if it is the white ball
     for( size_t i = 0; i < circles.size(); i++) {
         
         // Get position of center pixel of circle
@@ -101,6 +113,7 @@ void process_image_callback(const sensor_msgs::Image img)
     }
     drive_robot(lin_x, ang_z);
 }
+*/
 
 int main(int argc, char** argv)
 {
