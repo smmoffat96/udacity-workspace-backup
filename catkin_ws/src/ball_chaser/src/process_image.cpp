@@ -23,9 +23,9 @@ static const std::string OPENCV_WINDOW = "Image window";
 
 void view_image(const cv::Mat img) {
     // This function takes in an OpenCV image in BGR color channels and outputs to a window
-    cv::namedWindwo(OPENCV_WINDOW);
+    cv::namedWindow(OPENCV_WINDOW);
     cv::imshow(OPENCV_WINDOW, img);
-    cv::WaitKey(3);
+    //WaitKey(3);
 }
 
 // This callback function continuously executes and reads the image data
@@ -52,7 +52,7 @@ void process_image_callback(const sensor_msgs::Image img)
     
     // Convert image to gray scale
     cv::Mat gray;
-    cv::cvtColor(cv_img, gray, COLOR_BGR2GRAY);
+    cv::cvtColor(cv_img, gray, cv::COLOR_BGR2GRAY);
     cv::medianBlur(gray, gray, 5);
     
     // Apply Hough Circle Transform to detect circles
@@ -66,8 +66,8 @@ void process_image_callback(const sensor_msgs::Image img)
         cv::Point center = cv::Point(x_pos, y_pos);
         
         // Check if center pixel is white
-        cv::Scalar intensity = img.at<uchar>(center);
-        if (intensity >= 240) {
+        cv::Scalar intensity = gray.at<uchar>(center);
+        if (intensity[0] == 255) {
             // Find radius of circle
             int radius = cvRound(circles[i][2]);
             // If too big (ball is too close), stop driving
