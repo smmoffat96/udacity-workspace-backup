@@ -50,6 +50,7 @@ void process_image_callback(const sensor_msgs::Image img)
     int height = cv_img.rows;
     int width = cv_img.cols;
     int step = 0;
+    int tot_pixels = height * width;
     
     ////////////////////////////////////////////////////
     // USE THRESHOLD AND BLOB TO DETECT WHITE BALL
@@ -67,85 +68,48 @@ void process_image_callback(const sensor_msgs::Image img)
     cv::Mat binary;
     cv::threshold(gray, binary, thresh, maxValue, cv::THRESH_BINARY);
 
-    // Find moments of the image
-    cv::Moments m = cv::moments(binary, true);
-    // Position of centroid
-    cv::Point p(m.m10/m.m00, m.m01/m.m00);
-
-    // Show image with point mark at center
-    //cv::circle(cv_img, p, 5, cv::Scalar(128,0,0), -1);
-    //view_image(cv_img);
-
-    if (p.x <= width/3) {
+    // Find white pixels
+    std::vector<cv::Point> white_pixels;
+    cv::findNonZero(binary, white_pixels);
+    int num_white_pixels = white_pixels.size();
+    
+    // If too many white pixels, stop driving
+    if (num_white_pixels > tot_pixels/4) {
         lin_x = 0.0;
-        ang_z = 0.5;
-    }
-    else if (p.x <= 2*width/3) {
-        lin_x = 0.5;
         ang_z = 0.0;
     }
-    else if (p.x <= width) {
-        lin_x = 0.0;
-        ang_z = -0.5;
-    }
-    
+    // If not too many white pixels, go to drive commands
+    else if (num_white_pixels != 0) {
+        // Find moments of the image
+        cv::Moments m = cv::moments(binary, true);
+        // Position of centroid
+        cv::Point p(m.m10/m.m00, m.m01/m.m00);
 
-/*
-    //////////////////////////////////////////////////////////////////////
-    // USE HOUGH CIRCLE TRANSFORM TO DETECT WHITE BALL
-    
-    // Convert image to gray scale
-    cv::Mat gray;
-    cv::cvtColor(cv_img, gray, cv::COLOR_BGR2GRAY);
-    cv::medianBlur(gray, gray, 5);
-    
-    // Apply Hough Circle Transform to detect circles
-    std::vector<cv::Vec3f> circles;
-    //cv::HoughCircles(gray, circles, cv::HOUGH_GRADIENT, 1, gray.rows/16, 200, 100, 0, width/3);
-    
-    // Go to each detected circle to determine if it is the white ball
-    for( size_t i = 0; i < circles.size(); i++) {
-        
-        // Get position of centroid
-        int x_pos = cvRound(circles[i][0]);
-        int y_pos = cvRound(circles[i][1]);
-        cv::Point center = cv::Point(x_pos, y_pos);
-        
-        // Check if center pixel is white
-        cv::Scalar intensity = gray.at<uchar>(center);
-        if (intensity[0] == 255) {
-            // Find radius of circle
-            int radius = cvRound(circles[i][2]);
-            // If too big (ball is too close), stop driving
-            if ((radius > width/3) || (radius > height/3)) {
-                lin_x = 0.0;
-                ang_z = 0.0;
-            }
-            else {
-                // If left side, turn left
-                if (x_pos <= width/3) {
-                    lin_x = 0.0;
-                    ang_z = 0.5;
-                }
-                // If middle, drive forward
-                else if (x_pos <= 2*width/3) {
-                    lin_x = 0.5;
-                    ang_z = 0.0;
-                }
-                // If right, turn right
-                else if (x_pos <= width) {
-                    lin_x = 0.0;
-                    ang_z = -0.5;
-                }
-            }
-        }
-        // If there are no white pixels, stop driving
-        else {
+        // Show image with point mark at center
+        //cv::circle(cv_img, p, 5, cv::Scalar(128,0,0), -1);
+        //view_image(cv_img);
+
+        // If on left side of image, turn left
+        if (p.x <= width/3) {
             lin_x = 0.0;
+            ang_z = 0.5;
+        }
+        // If in middle of image, drive forward
+        else if (p.x <= 2*width/3) {
+            lin_x = 0.5;
             ang_z = 0.0;
         }
+        // If on right side of image, turn right
+        else if (p.x <= width) {
+            lin_x = 0.0;
+            ang_z = -0.5;
+        }
     }
-*/
+    // If no white pixels detected, stop driving
+    else {
+        lin_x = 0.0;
+        ang_z = 0.0;
+    }
 
     // Pass velocity parameters to drive_robot
     drive_robot(lin_x, ang_z);
