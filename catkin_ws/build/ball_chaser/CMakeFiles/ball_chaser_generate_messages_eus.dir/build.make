@@ -60,11 +60,11 @@ ball_chaser/CMakeFiles/ball_chaser_generate_messages_eus: /home/udacity-workspac
 /home/udacity-workspace-backup/catkin_ws/devel/share/roseus/ros/ball_chaser/srv/DriveToTarget.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/udacity-workspace-backup/catkin_ws/devel/share/roseus/ros/ball_chaser/srv/DriveToTarget.l: /home/udacity-workspace-backup/catkin_ws/src/ball_chaser/srv/DriveToTarget.srv
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/udacity-workspace-backup/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from ball_chaser/DriveToTarget.srv"
-	cd /home/udacity-workspace-backup/catkin_ws/build/ball_chaser && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/udacity-workspace-backup/catkin_ws/src/ball_chaser/srv/DriveToTarget.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p ball_chaser -o /home/udacity-workspace-backup/catkin_ws/devel/share/roseus/ros/ball_chaser/srv
+	cd /home/udacity-workspace-backup/catkin_ws/build/ball_chaser && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/udacity-workspace-backup/catkin_ws/src/ball_chaser/srv/DriveToTarget.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p ball_chaser -o /home/udacity-workspace-backup/catkin_ws/devel/share/roseus/ros/ball_chaser/srv
 
 /home/udacity-workspace-backup/catkin_ws/devel/share/roseus/ros/ball_chaser/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/udacity-workspace-backup/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for ball_chaser"
-	cd /home/udacity-workspace-backup/catkin_ws/build/ball_chaser && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/udacity-workspace-backup/catkin_ws/devel/share/roseus/ros/ball_chaser ball_chaser std_msgs
+	cd /home/udacity-workspace-backup/catkin_ws/build/ball_chaser && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/udacity-workspace-backup/catkin_ws/devel/share/roseus/ros/ball_chaser ball_chaser std_msgs sensor_msgs
 
 ball_chaser_generate_messages_eus: ball_chaser/CMakeFiles/ball_chaser_generate_messages_eus
 ball_chaser_generate_messages_eus: /home/udacity-workspace-backup/catkin_ws/devel/share/roseus/ros/ball_chaser/srv/DriveToTarget.l

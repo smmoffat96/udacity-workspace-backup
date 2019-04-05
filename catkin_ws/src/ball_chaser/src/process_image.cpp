@@ -56,17 +56,17 @@ void process_image_callback(const sensor_msgs::Image img)
     cv::medianBlur(gray, gray, 5);
     
     // Apply Hough Circle Transform to detect circles
-    vector<Vec3f> circles;
-    cv::HoughCircles(gray, circles, HOUGH_GRADIENT, 1, gray.rows/8, 200, 100, 0, 0);
+    std::vector<cv::Vec3f> circles;
+    cv::HoughCircles(gray, circles, cv::HOUGH_GRADIENT, 1, gray.rows/8, 200, 100, 0, 0);
     for( size_t i = 0; i < circles.size(); i++) {
         
         // Get position of center pixel of circle
         int x_pos = cvRound(circles[i][0]);
         int y_pos = cvRound(circles[i][1]);
-        Point center = Point(x_pos, y_pos);
+        cv::Point center = cv::Point(x_pos, y_pos);
         
         // Check if center pixel is white
-        Scalar intensity = img.at<uchar>(center);
+        cv::Scalar intensity = img.at<uchar>(center);
         if (intensity >= 240) {
             // Find radius of circle
             int radius = cvRound(circles[i][2]);

@@ -93,12 +93,16 @@ drive_bot_EXTERNAL_OBJECTS =
 /home/udacity-workspace-backup/catkin_ws/devel/lib/ball_chaser/drive_bot: /opt/ros/kinetic/lib/libroscpp.so
 /home/udacity-workspace-backup/catkin_ws/devel/lib/ball_chaser/drive_bot: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 /home/udacity-workspace-backup/catkin_ws/devel/lib/ball_chaser/drive_bot: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/udacity-workspace-backup/catkin_ws/devel/lib/ball_chaser/drive_bot: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/udacity-workspace-backup/catkin_ws/devel/lib/ball_chaser/drive_bot: /opt/ros/kinetic/lib/libcv_bridge.so
+/home/udacity-workspace-backup/catkin_ws/devel/lib/ball_chaser/drive_bot: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1
+/home/udacity-workspace-backup/catkin_ws/devel/lib/ball_chaser/drive_bot: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1
+/home/udacity-workspace-backup/catkin_ws/devel/lib/ball_chaser/drive_bot: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1
 /home/udacity-workspace-backup/catkin_ws/devel/lib/ball_chaser/drive_bot: /opt/ros/kinetic/lib/librosconsole.so
 /home/udacity-workspace-backup/catkin_ws/devel/lib/ball_chaser/drive_bot: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
 /home/udacity-workspace-backup/catkin_ws/devel/lib/ball_chaser/drive_bot: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
 /home/udacity-workspace-backup/catkin_ws/devel/lib/ball_chaser/drive_bot: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
 /home/udacity-workspace-backup/catkin_ws/devel/lib/ball_chaser/drive_bot: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/udacity-workspace-backup/catkin_ws/devel/lib/ball_chaser/drive_bot: /opt/ros/kinetic/lib/libxmlrpcpp.so
 /home/udacity-workspace-backup/catkin_ws/devel/lib/ball_chaser/drive_bot: /opt/ros/kinetic/lib/libroscpp_serialization.so
 /home/udacity-workspace-backup/catkin_ws/devel/lib/ball_chaser/drive_bot: /opt/ros/kinetic/lib/librostime.so
 /home/udacity-workspace-backup/catkin_ws/devel/lib/ball_chaser/drive_bot: /opt/ros/kinetic/lib/libcpp_common.so
