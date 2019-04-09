@@ -580,3 +580,5 @@ Linking C executable cmTC_a298a
 make[1]: Leaving directory '/home/udacity-workspace-backup/catkin_ws/build/CMakeFiles/CMakeTmp'
 
 
+The target system is: Linux - 4.15.0-1027-gcp - x86_64
+The host system is: Linux - 4.15.0-1027-gcp - x86_64
