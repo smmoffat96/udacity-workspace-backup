@@ -89,13 +89,13 @@ void visualization()
         for (int y = 0; y <= 150; y++) {
             double state =l[x][y];
             if (state == l0) {
-                plt::plot({(double)x}, {(double)y}, "Green and Square");
+                plt::plot({(double)x}, {(double)y}, "gs");
             }
             else if (state == locc) {
-                plt::plot({(double)x}, {(double)y}, "Black and Square");
+                plt::plot({(double)x}, {(double)y}, "ks");
             }
             else if (state == lfree) {
-                plt::plot({(double)x}, {(double)y}, "Red and Square");
+                plt::plot({(double)x}, {(double)y}, "rs");
             }
         }
     }
