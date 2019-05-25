@@ -80,28 +80,28 @@ void visualization()
 {
     //TODO: Initialize a plot named Map of size 300x150
     plt::title("Map");
-    plt::xlim(0, 300);
-    plt::ylim(0, 150);
+    plt::xlim(0, (int)(mapWidth/gridWidth));
+    plt::ylim(0, (int)(mapHeight/gridHeight));
     
     //TODO: Loop over the log odds values of the cells and plot each cell state. 
     //Unknown state: green color, occupied state: black color, and free state: red color 
-    for (int x = 0; x <= 300; x++) {
-        for (int y = 0; y <= 150; y++) {
+    for (double x = 0; x < mapWidth/gridWidth; x++) {
+        for (double y = 0; y <= 150; y++) {
             double state =l[x][y];
-            if (state == l0) {
-                plt::plot({(double)x}, {(double)y}, "gs");
+            if (state == 0) {
+                plt::plot({x}, {y}, "g.");
             }
-            else if (state == locc) {
-                plt::plot({(double)x}, {(double)y}, "ks");
+            else if (state > 0) {
+                plt::plot({x}, {y}, "k.");
             }
-            else if (state == lfree) {
-                plt::plot({(double)x}, {(double)y}, "rs");
+            else {
+                plt::plot({x}, {y}, "r.");
             }
         }
     }
     
     //TODO: Save the image and close the plot 
-    plt::save("Images/Map.png");
+    plt::save("./Images/Map.png");
     plt::clf();
 }
 
