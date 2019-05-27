@@ -3,9 +3,9 @@
 <launch>
     <!-- Arguments for launch file with defaults provided -->
     <arg name="database_path"       default="rtabmap.db"/>
-    <arg name="rgb_topic"           default="/camera/rgb/image"/>
-    <arg name="depth_topic"         default="/camera/depth/image"/>
-    <arg name="camera_info_topic"   default="/camera/rgb/camera_info"/>
+    <arg name="rgb_topic"           default="/rtabmap/rgb/image_raw"/>
+    <arg name="depth_topic"         default="/rtabmap/depth/image_raw"/>
+    <arg name="camera_info_topic"   default="/rtabmap/rgb/camera_info"/>
 
 
     <!-- Mapping Node -->
