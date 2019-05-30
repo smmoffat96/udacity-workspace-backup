@@ -108,6 +108,9 @@
       </plugin>
     </sensor>
   </gazebo>
+  
+  <!-- RGBD Camera -->
+  <gazebo reference="camera"/>
 
 
 </robot>
