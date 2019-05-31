@@ -27,7 +27,7 @@
   </gazebo>
 
   <!-- RGBD camera -->
-  <gazebo reference="camera_link">
+  <gazebo reference="camera">
     <sensor type="depth" name="camera1">
       <always_on>1</always_on>
       <update_rate>20.0</update_rate>
@@ -108,9 +108,6 @@
       </plugin>
     </sensor>
   </gazebo>
-  
-  <!-- RGBD Camera -->
-  <gazebo reference="camera"/>
 
 
 </robot>
