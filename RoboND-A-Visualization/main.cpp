@@ -249,7 +249,9 @@ void visualization(Map map, Planner planner)
     plt::plot({x_goal}, {y_goal}, "b*");
     
     // TODO: Plot the robot path in blue color using a .
-    plt::plot({planner.path[0]}, {planner.path[1]}, "b.");
+    for (int i = 0; i < planner.path.size(); i++) {
+        plt::plot({planner.path[i][0]}, {planner.path[i][1]}, "b.");
+    }
     
     //Save the image and close the plot
     plt::save("./Images/Path.png");
