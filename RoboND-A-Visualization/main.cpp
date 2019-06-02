@@ -240,12 +240,12 @@ void visualization(Map map, Planner planner)
     }
 
     // TODO: Plot start and end states in blue colors using o and * respectively
-    int x_start = planner.start[0];
-    int y_start = planner.start[1];
+    double x_start = planner.start[0];
+    double y_start = planner.start[1];
     plt::plot({x_start}, {y_start}, "bo");
 
-    int x_goal = planner.goal[0];
-    int y_goal = planner.goal[1];
+    double x_goal = planner.goal[0];
+    double y_goal = planner.goal[1];
     plt::plot({x_goal}, {y_goal}, "b*");
     
     // TODO: Plot the robot path in blue color using a .
