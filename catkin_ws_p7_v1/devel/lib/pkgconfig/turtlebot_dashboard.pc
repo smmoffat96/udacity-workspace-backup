@@ -1,0 +1,8 @@
+prefix=/home/udacity-workspace-backup/catkin_ws_p7_v1/devel
+
+Name: turtlebot_dashboard
+Description: Description of turtlebot_dashboard
+Version: 2.3.1
+Cflags: 
+Libs: -L/home/udacity-workspace-backup/catkin_ws_p7_v1/devel/lib 
+Requires: 

@@ -412,6 +412,9 @@ gtest_force_shared_crt:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
+//The directory containing a CMake configuration file for interactive_markers.
+interactive_markers_DIR:PATH=/opt/ros/kinetic/share/interactive_markers/cmake
+
 //The directory containing a CMake configuration file for joy.
 joy_DIR:PATH=/opt/ros/kinetic/share/joy/cmake
 
@@ -533,10 +536,34 @@ turtlebot_capabilities_BINARY_DIR:STATIC=/home/udacity-workspace-backup/catkin_w
 turtlebot_capabilities_SOURCE_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/src/turtlebot/turtlebot_capabilities
 
 //Value Computed by CMake
+turtlebot_dashboard_BINARY_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/build/turtlebot_interactions/turtlebot_dashboard
+
+//Value Computed by CMake
+turtlebot_dashboard_SOURCE_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/src/turtlebot_interactions/turtlebot_dashboard
+
+//Value Computed by CMake
 turtlebot_description_BINARY_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/build/turtlebot/turtlebot_description
 
 //Value Computed by CMake
 turtlebot_description_SOURCE_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/src/turtlebot/turtlebot_description
+
+//Value Computed by CMake
+turtlebot_interactions_BINARY_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/build/turtlebot_interactions/turtlebot_interactions
+
+//Value Computed by CMake
+turtlebot_interactions_SOURCE_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/src/turtlebot_interactions/turtlebot_interactions
+
+//Value Computed by CMake
+turtlebot_interactive_markers_BINARY_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/build/turtlebot_interactions/turtlebot_interactive_markers
+
+//Value Computed by CMake
+turtlebot_interactive_markers_SOURCE_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/src/turtlebot_interactions/turtlebot_interactive_markers
+
+//Value Computed by CMake
+turtlebot_rviz_launchers_BINARY_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/build/turtlebot_interactions/turtlebot_rviz_launchers
+
+//Value Computed by CMake
+turtlebot_rviz_launchers_SOURCE_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/src/turtlebot_interactions/turtlebot_rviz_launchers
 
 //Value Computed by CMake
 turtlebot_teleop_BINARY_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/build/turtlebot/turtlebot_teleop
@@ -546,6 +573,9 @@ turtlebot_teleop_SOURCE_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v
 
 //The directory containing a CMake configuration file for urdf.
 urdf_DIR:PATH=/opt/ros/kinetic/share/urdf/cmake
+
+//The directory containing a CMake configuration file for visualization_msgs.
+visualization_msgs_DIR:PATH=/opt/ros/kinetic/share/visualization_msgs/cmake
 
 //The directory containing a CMake configuration file for xacro.
 xacro_DIR:PATH=/opt/ros/kinetic/share/xacro/cmake
@@ -677,7 +707,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=10
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=14
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
