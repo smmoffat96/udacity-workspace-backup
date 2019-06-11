@@ -548,6 +548,12 @@ turtlebot_description_BINARY_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws
 turtlebot_description_SOURCE_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/src/turtlebot/turtlebot_description
 
 //Value Computed by CMake
+turtlebot_gazebo_BINARY_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/build/turtlebot_simulator/turtlebot_gazebo
+
+//Value Computed by CMake
+turtlebot_gazebo_SOURCE_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/src/turtlebot_simulator/turtlebot_gazebo
+
+//Value Computed by CMake
 turtlebot_interactions_BINARY_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/build/turtlebot_interactions/turtlebot_interactions
 
 //Value Computed by CMake
@@ -564,6 +570,24 @@ turtlebot_rviz_launchers_BINARY_DIR:STATIC=/home/udacity-workspace-backup/catkin
 
 //Value Computed by CMake
 turtlebot_rviz_launchers_SOURCE_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/src/turtlebot_interactions/turtlebot_rviz_launchers
+
+//Value Computed by CMake
+turtlebot_simulator_BINARY_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/build/turtlebot_simulator/turtlebot_simulator
+
+//Value Computed by CMake
+turtlebot_simulator_SOURCE_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/src/turtlebot_simulator/turtlebot_simulator
+
+//Value Computed by CMake
+turtlebot_stage_BINARY_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/build/turtlebot_simulator/turtlebot_stage
+
+//Value Computed by CMake
+turtlebot_stage_SOURCE_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/src/turtlebot_simulator/turtlebot_stage
+
+//Value Computed by CMake
+turtlebot_stdr_BINARY_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/build/turtlebot_simulator/turtlebot_stdr
+
+//Value Computed by CMake
+turtlebot_stdr_SOURCE_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/src/turtlebot_simulator/turtlebot_stdr
 
 //Value Computed by CMake
 turtlebot_teleop_BINARY_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/build/turtlebot/turtlebot_teleop
@@ -707,7 +731,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=14
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=18
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

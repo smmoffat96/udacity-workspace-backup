@@ -5,6 +5,11 @@
 # it emulates the modifications of the setup script without recurring computations
 
 # new environment variables
+export TURTLEBOT_GAZEBO_MAP_FILE="/home/udacity-workspace-backup/catkin_ws_p7_v1/src/turtlebot_simulator/turtlebot_gazebo/maps/playground.yaml"
+export TURTLEBOT_GAZEBO_WORLD_FILE="/home/udacity-workspace-backup/catkin_ws_p7_v1/src/turtlebot_simulator/turtlebot_gazebo/worlds/playground.world"
+export TURTLEBOT_STAGE_MAP_FILE="/home/udacity-workspace-backup/catkin_ws_p7_v1/src/turtlebot_simulator/turtlebot_stage/maps/maze.yaml"
+export TURTLEBOT_STAGE_WORLD_FILE="/home/udacity-workspace-backup/catkin_ws_p7_v1/src/turtlebot_simulator/turtlebot_stage/maps/stage/maze.world"
+export TURTLEBOT_STDR_MAP_FILE="/home/udacity-workspace-backup/catkin_ws_p7_v1/src/turtlebot_simulator/turtlebot_stdr/maps/sparse_obstacles.yaml"
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/udacity-workspace-backup/catkin_ws_p7_v1/devel:$CMAKE_PREFIX_PATH"
