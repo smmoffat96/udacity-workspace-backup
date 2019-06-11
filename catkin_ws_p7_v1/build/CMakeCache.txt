@@ -339,6 +339,12 @@ class_loader_DIR:PATH=/opt/ros/kinetic/share/class_loader/cmake
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/kinetic/share/cpp_common/cmake
 
+//The directory containing a CMake configuration file for diagnostic_msgs.
+diagnostic_msgs_DIR:PATH=/opt/ros/kinetic/share/diagnostic_msgs/cmake
+
+//The directory containing a CMake configuration file for diagnostic_updater.
+diagnostic_updater_DIR:PATH=/opt/ros/kinetic/share/diagnostic_updater/cmake
+
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/kinetic/share/gencpp/cmake
 
@@ -406,8 +412,11 @@ gtest_force_shared_crt:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
+//The directory containing a CMake configuration file for joy.
+joy_DIR:PATH=/opt/ros/kinetic/share/joy/cmake
+
 //Path to a library.
-lib:FILEPATH=/opt/ros/kinetic/lib/libroslz4.so
+lib:FILEPATH=/opt/ros/kinetic/lib/libxmlrpcpp.so
 
 //The directory containing a CMake configuration file for message_filters.
 message_filters_DIR:PATH=/opt/ros/kinetic/share/message_filters/cmake
@@ -435,6 +444,9 @@ rosbag_storage_DIR:PATH=/opt/ros/kinetic/share/rosbag_storage/cmake
 
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/kinetic/share/rosconsole/cmake
+
+//The directory containing a CMake configuration file for rosconsole_bridge.
+rosconsole_bridge_DIR:PATH=/opt/ros/kinetic/share/rosconsole_bridge/cmake
 
 //The directory containing a CMake configuration file for roscpp.
 roscpp_DIR:PATH=/opt/ros/kinetic/share/roscpp/cmake
@@ -501,6 +513,42 @@ tf2_ros_DIR:PATH=/opt/ros/kinetic/share/tf2_ros/cmake
 
 //The directory containing a CMake configuration file for tf.
 tf_DIR:PATH=/opt/ros/kinetic/share/tf/cmake
+
+//Value Computed by CMake
+turtlebot_BINARY_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/build/turtlebot/turtlebot
+
+//Value Computed by CMake
+turtlebot_SOURCE_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/src/turtlebot/turtlebot
+
+//Value Computed by CMake
+turtlebot_bringup_BINARY_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/build/turtlebot/turtlebot_bringup
+
+//Value Computed by CMake
+turtlebot_bringup_SOURCE_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/src/turtlebot/turtlebot_bringup
+
+//Value Computed by CMake
+turtlebot_capabilities_BINARY_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/build/turtlebot/turtlebot_capabilities
+
+//Value Computed by CMake
+turtlebot_capabilities_SOURCE_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/src/turtlebot/turtlebot_capabilities
+
+//Value Computed by CMake
+turtlebot_description_BINARY_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/build/turtlebot/turtlebot_description
+
+//Value Computed by CMake
+turtlebot_description_SOURCE_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/src/turtlebot/turtlebot_description
+
+//Value Computed by CMake
+turtlebot_teleop_BINARY_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/build/turtlebot/turtlebot_teleop
+
+//Value Computed by CMake
+turtlebot_teleop_SOURCE_DIR:STATIC=/home/udacity-workspace-backup/catkin_ws_p7_v1/src/turtlebot/turtlebot_teleop
+
+//The directory containing a CMake configuration file for urdf.
+urdf_DIR:PATH=/opt/ros/kinetic/share/urdf/cmake
+
+//The directory containing a CMake configuration file for xacro.
+xacro_DIR:PATH=/opt/ros/kinetic/share/xacro/cmake
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/kinetic/share/xmlrpcpp/cmake
@@ -629,7 +677,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=10
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

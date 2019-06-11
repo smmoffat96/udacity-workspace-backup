@@ -123,7 +123,12 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/udacity-workspace-backup/catkin_ws_p7_v1/build/gtest/cmake_install.cmake")
   include("/home/udacity-workspace-backup/catkin_ws_p7_v1/build/slam_gmapping/slam_gmapping/cmake_install.cmake")
+  include("/home/udacity-workspace-backup/catkin_ws_p7_v1/build/turtlebot/turtlebot/cmake_install.cmake")
+  include("/home/udacity-workspace-backup/catkin_ws_p7_v1/build/turtlebot/turtlebot_bringup/cmake_install.cmake")
+  include("/home/udacity-workspace-backup/catkin_ws_p7_v1/build/turtlebot/turtlebot_capabilities/cmake_install.cmake")
   include("/home/udacity-workspace-backup/catkin_ws_p7_v1/build/slam_gmapping/gmapping/cmake_install.cmake")
+  include("/home/udacity-workspace-backup/catkin_ws_p7_v1/build/turtlebot/turtlebot_teleop/cmake_install.cmake")
+  include("/home/udacity-workspace-backup/catkin_ws_p7_v1/build/turtlebot/turtlebot_description/cmake_install.cmake")
 
 endif()
 
