@@ -124,6 +124,9 @@ include_directories(
 #   src/${PROJECT_NAME}/add_markers.cpp
 # )
 
+add_executable(add_markers src/add_markers.cpp)
+target_link_libraries(add_markers ${catkin_LIBRARIES})
+
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
