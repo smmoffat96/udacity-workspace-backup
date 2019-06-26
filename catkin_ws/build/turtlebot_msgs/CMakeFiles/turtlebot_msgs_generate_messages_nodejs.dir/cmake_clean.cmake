@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/turtlebot_msgs_generate_messages_nodejs"
   "/home/udacity-workspace-backup/catkin_ws/devel/share/gennodejs/ros/turtlebot_msgs/msg/PanoramaImg.js"
-  "/home/udacity-workspace-backup/catkin_ws/devel/share/gennodejs/ros/turtlebot_msgs/srv/TakePanorama.js"
   "/home/udacity-workspace-backup/catkin_ws/devel/share/gennodejs/ros/turtlebot_msgs/srv/SetFollowState.js"
+  "/home/udacity-workspace-backup/catkin_ws/devel/share/gennodejs/ros/turtlebot_msgs/srv/TakePanorama.js"
 )
 
 # Per-language clean rules from dependency scanning.

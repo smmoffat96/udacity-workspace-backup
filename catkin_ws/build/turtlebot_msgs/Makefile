@@ -318,21 +318,6 @@ turtlebot_msgs_generate_messages_lisp/fast:
 .PHONY : turtlebot_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-turtlebot_msgs/CMakeFiles/turtlebot_msgs_genlisp.dir/rule:
-	cd /home/udacity-workspace-backup/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_msgs/CMakeFiles/turtlebot_msgs_genlisp.dir/rule
-.PHONY : turtlebot_msgs/CMakeFiles/turtlebot_msgs_genlisp.dir/rule
-
-# Convenience name for target.
-turtlebot_msgs_genlisp: turtlebot_msgs/CMakeFiles/turtlebot_msgs_genlisp.dir/rule
-
-.PHONY : turtlebot_msgs_genlisp
-
-# fast build rule for target.
-turtlebot_msgs_genlisp/fast:
-	cd /home/udacity-workspace-backup/catkin_ws/build && $(MAKE) -f turtlebot_msgs/CMakeFiles/turtlebot_msgs_genlisp.dir/build.make turtlebot_msgs/CMakeFiles/turtlebot_msgs_genlisp.dir/build
-.PHONY : turtlebot_msgs_genlisp/fast
-
-# Convenience name for target.
 turtlebot_msgs/CMakeFiles/_turtlebot_msgs_generate_messages_check_deps_TakePanorama.dir/rule:
 	cd /home/udacity-workspace-backup/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_msgs/CMakeFiles/_turtlebot_msgs_generate_messages_check_deps_TakePanorama.dir/rule
 .PHONY : turtlebot_msgs/CMakeFiles/_turtlebot_msgs_generate_messages_check_deps_TakePanorama.dir/rule
@@ -376,6 +361,21 @@ turtlebot_msgs_generate_messages_cpp: turtlebot_msgs/CMakeFiles/turtlebot_msgs_g
 turtlebot_msgs_generate_messages_cpp/fast:
 	cd /home/udacity-workspace-backup/catkin_ws/build && $(MAKE) -f turtlebot_msgs/CMakeFiles/turtlebot_msgs_generate_messages_cpp.dir/build.make turtlebot_msgs/CMakeFiles/turtlebot_msgs_generate_messages_cpp.dir/build
 .PHONY : turtlebot_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+turtlebot_msgs/CMakeFiles/turtlebot_msgs_genlisp.dir/rule:
+	cd /home/udacity-workspace-backup/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_msgs/CMakeFiles/turtlebot_msgs_genlisp.dir/rule
+.PHONY : turtlebot_msgs/CMakeFiles/turtlebot_msgs_genlisp.dir/rule
+
+# Convenience name for target.
+turtlebot_msgs_genlisp: turtlebot_msgs/CMakeFiles/turtlebot_msgs_genlisp.dir/rule
+
+.PHONY : turtlebot_msgs_genlisp
+
+# fast build rule for target.
+turtlebot_msgs_genlisp/fast:
+	cd /home/udacity-workspace-backup/catkin_ws/build && $(MAKE) -f turtlebot_msgs/CMakeFiles/turtlebot_msgs_genlisp.dir/build.make turtlebot_msgs/CMakeFiles/turtlebot_msgs_genlisp.dir/build
+.PHONY : turtlebot_msgs_genlisp/fast
 
 # Convenience name for target.
 turtlebot_msgs/CMakeFiles/_turtlebot_msgs_generate_messages_check_deps_SetFollowState.dir/rule:
@@ -474,11 +474,11 @@ help:
 	@echo "... install"
 	@echo "... std_srvs_generate_messages_cpp"
 	@echo "... turtlebot_msgs_generate_messages_lisp"
-	@echo "... turtlebot_msgs_genlisp"
 	@echo "... install/strip"
 	@echo "... _turtlebot_msgs_generate_messages_check_deps_TakePanorama"
 	@echo "... turtlebot_msgs_genpy"
 	@echo "... turtlebot_msgs_generate_messages_cpp"
+	@echo "... turtlebot_msgs_genlisp"
 	@echo "... _turtlebot_msgs_generate_messages_check_deps_SetFollowState"
 	@echo "... turtlebot_msgs_gencpp"
 	@echo "... turtlebot_msgs_generate_messages_eus"

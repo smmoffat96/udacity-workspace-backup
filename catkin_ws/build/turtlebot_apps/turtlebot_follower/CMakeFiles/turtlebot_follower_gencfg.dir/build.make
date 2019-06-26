@@ -54,14 +54,14 @@ CMAKE_BINARY_DIR = /home/udacity-workspace-backup/catkin_ws/build
 include turtlebot_apps/turtlebot_follower/CMakeFiles/turtlebot_follower_gencfg.dir/progress.make
 
 turtlebot_apps/turtlebot_follower/CMakeFiles/turtlebot_follower_gencfg: /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_follower/FollowerConfig.h
-turtlebot_apps/turtlebot_follower/CMakeFiles/turtlebot_follower_gencfg: /home/udacity-workspace-backup/catkin_ws/devel/lib/python3/dist-packages/turtlebot_follower/cfg/FollowerConfig.py
+turtlebot_apps/turtlebot_follower/CMakeFiles/turtlebot_follower_gencfg: /home/udacity-workspace-backup/catkin_ws/devel/lib/python2.7/dist-packages/turtlebot_follower/cfg/FollowerConfig.py
 
 
 /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_follower/FollowerConfig.h: /home/udacity-workspace-backup/catkin_ws/src/turtlebot_apps/turtlebot_follower/cfg/Follower.cfg
 /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_follower/FollowerConfig.h: /opt/ros/kinetic/share/dynamic_reconfigure/templates/ConfigType.py.template
 /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_follower/FollowerConfig.h: /opt/ros/kinetic/share/dynamic_reconfigure/templates/ConfigType.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/udacity-workspace-backup/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating dynamic reconfigure files from cfg/Follower.cfg: /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_follower/FollowerConfig.h /home/udacity-workspace-backup/catkin_ws/devel/lib/python3/dist-packages/turtlebot_follower/cfg/FollowerConfig.py"
-	cd /home/udacity-workspace-backup/catkin_ws/build/turtlebot_apps/turtlebot_follower && ../../catkin_generated/env_cached.sh /home/udacity-workspace-backup/catkin_ws/build/turtlebot_apps/turtlebot_follower/setup_custom_pythonpath.sh /home/udacity-workspace-backup/catkin_ws/src/turtlebot_apps/turtlebot_follower/cfg/Follower.cfg /opt/ros/kinetic/share/dynamic_reconfigure/cmake/.. /home/udacity-workspace-backup/catkin_ws/devel/share/turtlebot_follower /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_follower /home/udacity-workspace-backup/catkin_ws/devel/lib/python3/dist-packages/turtlebot_follower
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/udacity-workspace-backup/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating dynamic reconfigure files from cfg/Follower.cfg: /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_follower/FollowerConfig.h /home/udacity-workspace-backup/catkin_ws/devel/lib/python2.7/dist-packages/turtlebot_follower/cfg/FollowerConfig.py"
+	cd /home/udacity-workspace-backup/catkin_ws/build/turtlebot_apps/turtlebot_follower && ../../catkin_generated/env_cached.sh /home/udacity-workspace-backup/catkin_ws/build/turtlebot_apps/turtlebot_follower/setup_custom_pythonpath.sh /home/udacity-workspace-backup/catkin_ws/src/turtlebot_apps/turtlebot_follower/cfg/Follower.cfg /opt/ros/kinetic/share/dynamic_reconfigure/cmake/.. /home/udacity-workspace-backup/catkin_ws/devel/share/turtlebot_follower /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_follower /home/udacity-workspace-backup/catkin_ws/devel/lib/python2.7/dist-packages/turtlebot_follower
 
 /home/udacity-workspace-backup/catkin_ws/devel/share/turtlebot_follower/docs/FollowerConfig.dox: /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_follower/FollowerConfig.h
 	@$(CMAKE_COMMAND) -E touch_nocreate /home/udacity-workspace-backup/catkin_ws/devel/share/turtlebot_follower/docs/FollowerConfig.dox
@@ -69,8 +69,8 @@ turtlebot_apps/turtlebot_follower/CMakeFiles/turtlebot_follower_gencfg: /home/ud
 /home/udacity-workspace-backup/catkin_ws/devel/share/turtlebot_follower/docs/FollowerConfig-usage.dox: /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_follower/FollowerConfig.h
 	@$(CMAKE_COMMAND) -E touch_nocreate /home/udacity-workspace-backup/catkin_ws/devel/share/turtlebot_follower/docs/FollowerConfig-usage.dox
 
-/home/udacity-workspace-backup/catkin_ws/devel/lib/python3/dist-packages/turtlebot_follower/cfg/FollowerConfig.py: /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_follower/FollowerConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/udacity-workspace-backup/catkin_ws/devel/lib/python3/dist-packages/turtlebot_follower/cfg/FollowerConfig.py
+/home/udacity-workspace-backup/catkin_ws/devel/lib/python2.7/dist-packages/turtlebot_follower/cfg/FollowerConfig.py: /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_follower/FollowerConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate /home/udacity-workspace-backup/catkin_ws/devel/lib/python2.7/dist-packages/turtlebot_follower/cfg/FollowerConfig.py
 
 /home/udacity-workspace-backup/catkin_ws/devel/share/turtlebot_follower/docs/FollowerConfig.wikidoc: /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_follower/FollowerConfig.h
 	@$(CMAKE_COMMAND) -E touch_nocreate /home/udacity-workspace-backup/catkin_ws/devel/share/turtlebot_follower/docs/FollowerConfig.wikidoc
@@ -79,7 +79,7 @@ turtlebot_follower_gencfg: turtlebot_apps/turtlebot_follower/CMakeFiles/turtlebo
 turtlebot_follower_gencfg: /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_follower/FollowerConfig.h
 turtlebot_follower_gencfg: /home/udacity-workspace-backup/catkin_ws/devel/share/turtlebot_follower/docs/FollowerConfig.dox
 turtlebot_follower_gencfg: /home/udacity-workspace-backup/catkin_ws/devel/share/turtlebot_follower/docs/FollowerConfig-usage.dox
-turtlebot_follower_gencfg: /home/udacity-workspace-backup/catkin_ws/devel/lib/python3/dist-packages/turtlebot_follower/cfg/FollowerConfig.py
+turtlebot_follower_gencfg: /home/udacity-workspace-backup/catkin_ws/devel/lib/python2.7/dist-packages/turtlebot_follower/cfg/FollowerConfig.py
 turtlebot_follower_gencfg: /home/udacity-workspace-backup/catkin_ws/devel/share/turtlebot_follower/docs/FollowerConfig.wikidoc
 turtlebot_follower_gencfg: turtlebot_apps/turtlebot_follower/CMakeFiles/turtlebot_follower_gencfg.dir/build.make
 

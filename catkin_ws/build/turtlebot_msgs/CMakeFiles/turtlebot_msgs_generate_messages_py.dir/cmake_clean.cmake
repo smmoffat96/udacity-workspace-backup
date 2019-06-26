@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/turtlebot_msgs_generate_messages_py"
-  "/home/udacity-workspace-backup/catkin_ws/devel/lib/python3/dist-packages/turtlebot_msgs/msg/_PanoramaImg.py"
-  "/home/udacity-workspace-backup/catkin_ws/devel/lib/python3/dist-packages/turtlebot_msgs/srv/_TakePanorama.py"
-  "/home/udacity-workspace-backup/catkin_ws/devel/lib/python3/dist-packages/turtlebot_msgs/srv/_SetFollowState.py"
-  "/home/udacity-workspace-backup/catkin_ws/devel/lib/python3/dist-packages/turtlebot_msgs/msg/__init__.py"
-  "/home/udacity-workspace-backup/catkin_ws/devel/lib/python3/dist-packages/turtlebot_msgs/srv/__init__.py"
+  "/home/udacity-workspace-backup/catkin_ws/devel/lib/python2.7/dist-packages/turtlebot_msgs/msg/_PanoramaImg.py"
+  "/home/udacity-workspace-backup/catkin_ws/devel/lib/python2.7/dist-packages/turtlebot_msgs/srv/_SetFollowState.py"
+  "/home/udacity-workspace-backup/catkin_ws/devel/lib/python2.7/dist-packages/turtlebot_msgs/srv/_TakePanorama.py"
+  "/home/udacity-workspace-backup/catkin_ws/devel/lib/python2.7/dist-packages/turtlebot_msgs/msg/__init__.py"
+  "/home/udacity-workspace-backup/catkin_ws/devel/lib/python2.7/dist-packages/turtlebot_msgs/srv/__init__.py"
 )
 
 # Per-language clean rules from dependency scanning.

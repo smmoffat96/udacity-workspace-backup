@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/turtlebot_calibration_generate_messages_py"
-  "/home/udacity-workspace-backup/catkin_ws/devel/lib/python3/dist-packages/turtlebot_calibration/msg/_ScanAngle.py"
-  "/home/udacity-workspace-backup/catkin_ws/devel/lib/python3/dist-packages/turtlebot_calibration/msg/__init__.py"
+  "/home/udacity-workspace-backup/catkin_ws/devel/lib/python2.7/dist-packages/turtlebot_calibration/msg/_ScanAngle.py"
+  "/home/udacity-workspace-backup/catkin_ws/devel/lib/python2.7/dist-packages/turtlebot_calibration/msg/__init__.py"
 )
 
 # Per-language clean rules from dependency scanning.

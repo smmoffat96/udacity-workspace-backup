@@ -54,36 +54,36 @@ CMAKE_BINARY_DIR = /home/udacity-workspace-backup/catkin_ws/build
 include turtlebot_msgs/CMakeFiles/turtlebot_msgs_generate_messages_cpp.dir/progress.make
 
 turtlebot_msgs/CMakeFiles/turtlebot_msgs_generate_messages_cpp: /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/PanoramaImg.h
-turtlebot_msgs/CMakeFiles/turtlebot_msgs_generate_messages_cpp: /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/TakePanorama.h
 turtlebot_msgs/CMakeFiles/turtlebot_msgs_generate_messages_cpp: /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/SetFollowState.h
+turtlebot_msgs/CMakeFiles/turtlebot_msgs_generate_messages_cpp: /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/TakePanorama.h
 
 
 /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/PanoramaImg.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
 /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/PanoramaImg.h: /home/udacity-workspace-backup/catkin_ws/src/turtlebot_msgs/msg/PanoramaImg.msg
-/home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/PanoramaImg.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
 /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/PanoramaImg.h: /opt/ros/kinetic/share/sensor_msgs/msg/Image.msg
+/home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/PanoramaImg.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
 /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/PanoramaImg.h: /opt/ros/kinetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/udacity-workspace-backup/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from turtlebot_msgs/PanoramaImg.msg"
 	cd /home/udacity-workspace-backup/catkin_ws/src/turtlebot_msgs && /home/udacity-workspace-backup/catkin_ws/build/catkin_generated/env_cached.sh /root/miniconda3/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/udacity-workspace-backup/catkin_ws/src/turtlebot_msgs/msg/PanoramaImg.msg -Iturtlebot_msgs:/home/udacity-workspace-backup/catkin_ws/src/turtlebot_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p turtlebot_msgs -o /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
-
-/home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/TakePanorama.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/TakePanorama.h: /home/udacity-workspace-backup/catkin_ws/src/turtlebot_msgs/srv/TakePanorama.srv
-/home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/TakePanorama.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-/home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/TakePanorama.h: /opt/ros/kinetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/udacity-workspace-backup/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from turtlebot_msgs/TakePanorama.srv"
-	cd /home/udacity-workspace-backup/catkin_ws/src/turtlebot_msgs && /home/udacity-workspace-backup/catkin_ws/build/catkin_generated/env_cached.sh /root/miniconda3/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/udacity-workspace-backup/catkin_ws/src/turtlebot_msgs/srv/TakePanorama.srv -Iturtlebot_msgs:/home/udacity-workspace-backup/catkin_ws/src/turtlebot_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p turtlebot_msgs -o /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/SetFollowState.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
 /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/SetFollowState.h: /home/udacity-workspace-backup/catkin_ws/src/turtlebot_msgs/srv/SetFollowState.srv
 /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/SetFollowState.h: /opt/ros/kinetic/share/gencpp/msg.h.template
 /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/SetFollowState.h: /opt/ros/kinetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/udacity-workspace-backup/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from turtlebot_msgs/SetFollowState.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/udacity-workspace-backup/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from turtlebot_msgs/SetFollowState.srv"
 	cd /home/udacity-workspace-backup/catkin_ws/src/turtlebot_msgs && /home/udacity-workspace-backup/catkin_ws/build/catkin_generated/env_cached.sh /root/miniconda3/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/udacity-workspace-backup/catkin_ws/src/turtlebot_msgs/srv/SetFollowState.srv -Iturtlebot_msgs:/home/udacity-workspace-backup/catkin_ws/src/turtlebot_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p turtlebot_msgs -o /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+/home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/TakePanorama.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/TakePanorama.h: /home/udacity-workspace-backup/catkin_ws/src/turtlebot_msgs/srv/TakePanorama.srv
+/home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/TakePanorama.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+/home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/TakePanorama.h: /opt/ros/kinetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/udacity-workspace-backup/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from turtlebot_msgs/TakePanorama.srv"
+	cd /home/udacity-workspace-backup/catkin_ws/src/turtlebot_msgs && /home/udacity-workspace-backup/catkin_ws/build/catkin_generated/env_cached.sh /root/miniconda3/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/udacity-workspace-backup/catkin_ws/src/turtlebot_msgs/srv/TakePanorama.srv -Iturtlebot_msgs:/home/udacity-workspace-backup/catkin_ws/src/turtlebot_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p turtlebot_msgs -o /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 turtlebot_msgs_generate_messages_cpp: turtlebot_msgs/CMakeFiles/turtlebot_msgs_generate_messages_cpp
 turtlebot_msgs_generate_messages_cpp: /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/PanoramaImg.h
-turtlebot_msgs_generate_messages_cpp: /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/TakePanorama.h
 turtlebot_msgs_generate_messages_cpp: /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/SetFollowState.h
+turtlebot_msgs_generate_messages_cpp: /home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/TakePanorama.h
 turtlebot_msgs_generate_messages_cpp: turtlebot_msgs/CMakeFiles/turtlebot_msgs_generate_messages_cpp.dir/build.make
 
 .PHONY : turtlebot_msgs_generate_messages_cpp

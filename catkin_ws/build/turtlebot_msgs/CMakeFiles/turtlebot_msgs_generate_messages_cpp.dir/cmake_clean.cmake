@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/turtlebot_msgs_generate_messages_cpp"
   "/home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/PanoramaImg.h"
-  "/home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/TakePanorama.h"
   "/home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/SetFollowState.h"
+  "/home/udacity-workspace-backup/catkin_ws/devel/include/turtlebot_msgs/TakePanorama.h"
 )
 
 # Per-language clean rules from dependency scanning.

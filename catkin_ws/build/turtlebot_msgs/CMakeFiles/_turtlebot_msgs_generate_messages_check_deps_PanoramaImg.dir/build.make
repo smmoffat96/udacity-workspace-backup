@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/udacity-workspace-backup/catkin_ws/build
 include turtlebot_msgs/CMakeFiles/_turtlebot_msgs_generate_messages_check_deps_PanoramaImg.dir/progress.make
 
 turtlebot_msgs/CMakeFiles/_turtlebot_msgs_generate_messages_check_deps_PanoramaImg:
-	cd /home/udacity-workspace-backup/catkin_ws/build/turtlebot_msgs && ../catkin_generated/env_cached.sh /root/miniconda3/bin/python /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py turtlebot_msgs /home/udacity-workspace-backup/catkin_ws/src/turtlebot_msgs/msg/PanoramaImg.msg std_msgs/Header:sensor_msgs/Image
+	cd /home/udacity-workspace-backup/catkin_ws/build/turtlebot_msgs && ../catkin_generated/env_cached.sh /root/miniconda3/bin/python /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py turtlebot_msgs /home/udacity-workspace-backup/catkin_ws/src/turtlebot_msgs/msg/PanoramaImg.msg sensor_msgs/Image:std_msgs/Header
 
 _turtlebot_msgs_generate_messages_check_deps_PanoramaImg: turtlebot_msgs/CMakeFiles/_turtlebot_msgs_generate_messages_check_deps_PanoramaImg
 _turtlebot_msgs_generate_messages_check_deps_PanoramaImg: turtlebot_msgs/CMakeFiles/_turtlebot_msgs_generate_messages_check_deps_PanoramaImg.dir/build.make

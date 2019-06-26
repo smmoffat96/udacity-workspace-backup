@@ -42,15 +42,15 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/turtlebot_follower" TYPE FILE FILES "/home/udacity-workspace-backup/catkin_ws/devel/lib/python3/dist-packages/turtlebot_follower/__init__.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/turtlebot_follower" TYPE FILE FILES "/home/udacity-workspace-backup/catkin_ws/devel/lib/python2.7/dist-packages/turtlebot_follower/__init__.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/root/miniconda3/bin/python" -m compileall "/home/udacity-workspace-backup/catkin_ws/devel/lib/python3/dist-packages/turtlebot_follower/cfg")
+  execute_process(COMMAND "/root/miniconda3/bin/python" -m compileall "/home/udacity-workspace-backup/catkin_ws/devel/lib/python2.7/dist-packages/turtlebot_follower/cfg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/turtlebot_follower" TYPE DIRECTORY FILES "/home/udacity-workspace-backup/catkin_ws/devel/lib/python3/dist-packages/turtlebot_follower/cfg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/turtlebot_follower" TYPE DIRECTORY FILES "/home/udacity-workspace-backup/catkin_ws/devel/lib/python2.7/dist-packages/turtlebot_follower/cfg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

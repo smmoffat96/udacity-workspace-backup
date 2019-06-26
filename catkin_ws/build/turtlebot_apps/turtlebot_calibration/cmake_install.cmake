@@ -62,11 +62,11 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/root/miniconda3/bin/python" -m compileall "/home/udacity-workspace-backup/catkin_ws/devel/lib/python3/dist-packages/turtlebot_calibration")
+  execute_process(COMMAND "/root/miniconda3/bin/python" -m compileall "/home/udacity-workspace-backup/catkin_ws/devel/lib/python2.7/dist-packages/turtlebot_calibration")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/udacity-workspace-backup/catkin_ws/devel/lib/python3/dist-packages/turtlebot_calibration")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/udacity-workspace-backup/catkin_ws/devel/lib/python2.7/dist-packages/turtlebot_calibration")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

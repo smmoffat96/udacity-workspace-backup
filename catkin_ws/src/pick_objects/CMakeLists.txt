@@ -125,6 +125,9 @@ include_directories(
 #   src/${PROJECT_NAME}/pick_objects.cpp
 # )
 
+add_executable(pick_objects src/pick_objects.cpp)
+target_link_libraries(pick_objects ${catkin_LIBRARIES})
+
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure

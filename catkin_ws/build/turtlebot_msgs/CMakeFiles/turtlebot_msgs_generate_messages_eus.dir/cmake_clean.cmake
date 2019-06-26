@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/turtlebot_msgs_generate_messages_eus"
   "/home/udacity-workspace-backup/catkin_ws/devel/share/roseus/ros/turtlebot_msgs/msg/PanoramaImg.l"
-  "/home/udacity-workspace-backup/catkin_ws/devel/share/roseus/ros/turtlebot_msgs/srv/TakePanorama.l"
   "/home/udacity-workspace-backup/catkin_ws/devel/share/roseus/ros/turtlebot_msgs/srv/SetFollowState.l"
+  "/home/udacity-workspace-backup/catkin_ws/devel/share/roseus/ros/turtlebot_msgs/srv/TakePanorama.l"
   "/home/udacity-workspace-backup/catkin_ws/devel/share/roseus/ros/turtlebot_msgs/manifest.l"
 )
 
