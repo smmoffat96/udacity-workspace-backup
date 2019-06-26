@@ -65,6 +65,9 @@ int main(int argc, char** argv) {
         // Pause five seconds
         marker.lifetime = ros::Duration(5.0);
 
+        // Add the marker
+        marker.action = visualization_msgs::Marker::ADD;
+
         // Set the pose of the marker. This is a full 6DOF pose relative to the frame/time specified in the header
         marker.pose.position.x = 5;
         marker.pose.position.y = -10;
@@ -73,6 +76,16 @@ int main(int argc, char** argv) {
         marker.pose.orientation.y = 0;
         marker.pose.orientation.z = 0;
         marker.pose.orientation.w = 1.0;
+
+        // Publish the marker
+        while (marker_pub.getNumSubscribers() < 1) {
+            if (!ros::ok()) {
+                return 0;
+            }
+            ROS_WARN_ONCE("Please create a subscriber to the marker");
+            sleep(1);
+        }
+        marker_pub.publish(marker);
 
         r.sleep();
     }
