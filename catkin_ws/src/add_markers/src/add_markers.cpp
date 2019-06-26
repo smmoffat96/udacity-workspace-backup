@@ -11,7 +11,7 @@ int main(int argc, char** argv) {
     uint32_t shape = visualization_msgs::Marker::CUBE;
 
     while (ros::ok()) {
-        visualization_msgs:Marker marker;
+        visualization_msgs::Marker marker;
         // Set the frame ID and timestamp
         marker.header.frame_id = "map";
         marker.header.stamp = ros::Time::now();
@@ -47,7 +47,7 @@ int main(int argc, char** argv) {
         marker.color.b = 0.0f;
         marker.color.a = 1.0;
 
-        marker.lifetime = ros::Duration(5.0);
+        marker.lifetime = ros::Duration();
 
         // Publish the marker
         while (marker_pub.getNumSubscribers() < 1) {
@@ -60,13 +60,13 @@ int main(int argc, char** argv) {
         marker_pub.publish(marker);
 
         // Hide the marker
-        marker.action = visualization_msgs::Marker::DELETE;
+        //marker.action = visualization_msgs::Marker::DELETE;
 
         // Pause five seconds
-        marker.lifetime = ros::Duration(5.0);
+        //marker.lifetime = ros::Duration(5.0);
 
         // Add the marker
-        marker.action = visualization_msgs::Marker::ADD;
+        //marker.action = visualization_msgs::Marker::ADD;
 
         // Set the pose of the marker. This is a full 6DOF pose relative to the frame/time specified in the header
         marker.pose.position.x = 5;
