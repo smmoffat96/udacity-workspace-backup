@@ -1,11 +1,29 @@
 #include <ros/ros.h>
 #include <visualization_msgs/Marker.h>
+#include <geometry_msgs/Pose.h>
+#include <nav_msgs/Odometry.h>
+
+void odomCallback(const nav_msgs::Odometry::pose odom_pose) {
+    ROS_INFO("Position -> x: [%f], y: [%f]", odom_pose->pose.pose.position.x, odom_pose.pose.position.y);
+}
+
+void goalCallback(const move_base_msgs::MoveBaseGoal goal) {
+
+}
 
 int main(int argc, char** argv) {
     ros::init(argc, argv, "add_markers");
     ros::NodeHandle n;
     ros::Rate r(1);
     ros::Publisher marker_pub = n.advertise<visualization_msgs::Marker>("visualization_marker", 1);
+    ros::Subscriber odom_sub = n.subscribe("odom_pose", 1, odomCallback);
+    ros::Subscriber goal_sub = n.subscribe("goal_pose", 1, goalCallback);
+    ros::spin();
+
+    // Odometry pose
+    marker.pose.position.x = goal_pose->target_pose.pose.position.x;
+    float current_robot_pose_x = odom_sub->pose.pose.position.x;
+    marker.pose.position.y = odom_sub->pose.pose.position.y;
 
     // Set our initial shape type to be a cube
     uint32_t shape = visualization_msgs::Marker::CUBE;
@@ -44,10 +62,6 @@ int main(int argc, char** argv) {
         // Pick
         case 0:
             marker.action = visualization_msgs::Marker::ADD;
-            
-            // Pickup Pose
-            marker.pose.position.x = 0;
-            marker.pose.position.y = 0;
 
             // Publish the marker
             while (marker_pub.getNumSubscribers() < 1) {
@@ -85,10 +99,6 @@ int main(int argc, char** argv) {
         // Drop
         case 2:
             marker.action = visualization_msgs::Marker::ADD;
-
-            // Dropoff Pose
-            marker.pose.position.x = -5;
-            marker.pose.position.y = 0;
 
             // Publish the marker
             while (marker_pub.getNumSubscribers() < 1) {
