@@ -29,6 +29,7 @@ int main(int argc, char** argv) {
     goal_pick.target_pose.header.stamp = ros::Time::now();
     // Define a position and orientation for the robot to reach
     goal_pick.target_pose.pose.position.x = 10.0;
+    goal_pick.target_pose.pose.position.y = 0.0;
     goal_pick.target_pose.pose.orientation.w = 1.0;
     // Send the goal position and orientation for the robot to reach
     ROS_INFO("Sending pickup goal");
@@ -42,28 +43,22 @@ int main(int argc, char** argv) {
     else
         ROS_INFO("The robot failed to reach the pickup zone");
 
-
-
-
     // Wait 5 sec for move_base action server to come up
     while(!ac.waitForServer(ros::Duration(5.0))) {
         ROS_INFO("Waiting for the move_base action server to come up");
     }
 
     move_base_msgs::MoveBaseGoal goal_drop;
-
     // Set up the frame parameters
     goal_drop.target_pose.header.frame_id = "map";
     goal_drop.target_pose.header.stamp = ros::Time::now();
-
     // Define a position and orientation for the robot to reach
     goal_drop.target_pose.pose.position.x = -6.0;
+    goal_drop.target_pose.pose.position.y = -1.0;
     goal_drop.target_pose.pose.orientation.w = -1.0;
-
     // Send the goal position and orientation for the robot to reach
     ROS_INFO("Sending dropoff goal");
     ac.sendGoal(goal_drop);
-
     // Wait an infinite time for the results
     ac.waitForResult();
 

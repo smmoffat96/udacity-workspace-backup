@@ -3,11 +3,30 @@
 #include <geometry_msgs/Pose.h>
 #include <nav_msgs/Odometry.h>
 
-void odomCallback(const nav_msgs::Odometry::pose odom_pose) {
-    ROS_INFO("Position -> x: [%f], y: [%f]", odom_pose->pose.pose.position.x, odom_pose.pose.position.y);
+class Poses
+{
+public:
+    geometry_msgs::Pose goal;
+    geometry_msgs::Pose odom;
+
+    void odomCallback(const nav_msgs::Odometry::ConstPtr &odom_pose);
+    void goalCallback(const geometry_msgs::Pose &goal_pose);
+};
+
+
+void odomCallback(const nav_msgs::Odometry::ConstPtr &odom_pose) {
+    odom.position.x = odom_pose->pose.pose.position.x;
+    odom.position.y = odom_pose->pose.pose.position.y;
+    odom.orientation.w = odom_pose->pose.pose.orientation.w;
+    ROS_INFO("Odom Pose -> x: [%f], y: [%f], w: [%f]", 
+        odom_pose->pose.pose.position.x, odom_pose.pose.position.y,
+        odom_pose->pose.pose.orientation.w);
 }
 
-void goalCallback(const move_base_msgs::MoveBaseGoal goal) {
+void goalCallback(const move_base_msgs::MoveBaseGoal &goal_pose) {
+    goal.position.x = goal_pose.target_pose.pose.position.x;
+    goal.position.y = goal_pose.target_pose.pose.position.y;
+    goal.orientation.w = goal_pose.target_pose.pose.orientation.w;
 
 }
 
@@ -21,9 +40,13 @@ int main(int argc, char** argv) {
     ros::spin();
 
     // Odometry pose
-    marker.pose.position.x = goal_pose->target_pose.pose.position.x;
-    float current_robot_pose_x = odom_sub->pose.pose.position.x;
-    marker.pose.position.y = odom_sub->pose.pose.position.y;
+    float odom_pose_x = odom.position.x;
+    float odom_pose_y = odom.position.y;
+    float odom_pose_w = odom.orientation.w;
+    // Goal pose
+    float goal_pose_x = goalposition.x;
+    float goal_pose_y = goal.position.y;
+    float goal_pose_w = goal.orientation.w;
 
     // Set our initial shape type to be a cube
     uint32_t shape = visualization_msgs::Marker::CUBE;
@@ -34,7 +57,6 @@ int main(int argc, char** argv) {
         // Set the frame ID and timestamp
         marker.header.frame_id = "map";
         marker.header.stamp = ros::Time::now();
-
         marker.ns = "add_markers";
         marker.id = 0;
 
@@ -49,11 +71,15 @@ int main(int argc, char** argv) {
         marker.color.b = 0.0f;
         marker.color.a = 1.0;
 
+        // Marker pose
+        marker.pose.position.x = goal_pose_x;
+        marker.pose.position.y = goal_pose_y;
+        marker.pose.orientation.w = goal_pose_w;
+
         marker.pose.position.z = 0;
         marker.pose.orientation.x = 0;
         marker.pose.orientation.y = 0;
         marker.pose.orientation.z = 0;
-        marker.pose.orientation.w = 1.0;
 
         marker.lifetime = ros::Duration();
 
