@@ -9,7 +9,6 @@ typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseCl
 int main(int argc, char** argv) {
     // Initialize the pick_objects node
     ros::init(argc, argv, "pick_objects");
-
     // Tell the action client that we want to spin a thread by default
     MoveBaseClient ac("move_base", true);
     // Update robot position using rosparam
@@ -19,13 +18,16 @@ int main(int argc, char** argv) {
         ROS_INFO("Waiting for the move_base action server to come up");
     }
 
+    // Wait 5 seconds
+    ros::Duration(5.0).sleep();
+
     move_base_msgs::MoveBaseGoal goal_pick;
     // Set up the frame parameters
     goal_pick.target_pose.header.frame_id = "map";
     goal_pick.target_pose.header.stamp = ros::Time::now();
     // Define a position and orientation for the robot to reach
-    goal_pick.target_pose.pose.position.x = 0.0;
-    goal_pick.target_pose.pose.position.y = 0.0;
+    goal_pick.target_pose.pose.position.x = 2.0;
+    goal_pick.target_pose.pose.position.y = 1.0;
     goal_pick.target_pose.pose.orientation.w = 1.0;
     // Send the goal position and orientation for the robot to reach
     ROS_INFO("Sending pickup goal");
@@ -69,6 +71,9 @@ int main(int argc, char** argv) {
         ROS_INFO("The robot failed to reach the dropoff zone");
         ros::param::set("/robot_pose", "dropoff_pose_failed");
     }
+
+    // Wait 5 seconds
+    ros::Duration(5.0).sleep();
 
     return 0;
 }
