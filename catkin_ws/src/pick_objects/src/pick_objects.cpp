@@ -24,7 +24,7 @@ int main(int argc, char** argv) {
     goal_pick.target_pose.header.frame_id = "map";
     goal_pick.target_pose.header.stamp = ros::Time::now();
     // Define a position and orientation for the robot to reach
-    goal_pick.target_pose.pose.position.x = 10.0;
+    goal_pick.target_pose.pose.position.x = 0.0;
     goal_pick.target_pose.pose.position.y = 0.0;
     goal_pick.target_pose.pose.orientation.w = 1.0;
     // Send the goal position and orientation for the robot to reach
@@ -51,7 +51,7 @@ int main(int argc, char** argv) {
     goal_drop.target_pose.header.frame_id = "map";
     goal_drop.target_pose.header.stamp = ros::Time::now();
     // Define a position and orientation for the robot to reach
-    goal_drop.target_pose.pose.position.x = -6.0;
+    goal_drop.target_pose.pose.position.x = -2.0;
     goal_drop.target_pose.pose.position.y = -1.0;
     goal_drop.target_pose.pose.orientation.w = -1.0;
     // Send the goal position and orientation for the robot to reach

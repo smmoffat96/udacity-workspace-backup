@@ -30,7 +30,7 @@ int main(int argc, char** argv) {
         marker.color.a = 1.0;
             
         // Marker pose
-        marker.pose.position.x = 10.0;
+        marker.pose.position.x = 0.0;
         marker.pose.position.y = 0.0;
         marker.pose.orientation.w = 1.0;
         
@@ -63,7 +63,7 @@ int main(int argc, char** argv) {
             if (robot_pose == "dropoff_pose") {
                 marker.action = visualization_msgs::Marker::ADD;
                 // Marker pose
-                marker.pose.position.x = -6.0;
+                marker.pose.position.x = -2.0;
                 marker.pose.position.y = -1.0;
                 marker.pose.orientation.w = -1.0;
                 marker_pub.publish(marker);
