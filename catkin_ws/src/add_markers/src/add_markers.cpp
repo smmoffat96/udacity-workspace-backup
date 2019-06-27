@@ -52,11 +52,13 @@ int main(int argc, char** argv) {
 
         if (ros::param::get("/robot_pose", robot_pose)) {
             if (robot_pose == "init_pose") {
+                ROS_INFO("Moving to pickup...");
                 marker.action = visualization_msgs::Marker::ADD;
                 marker_pub.publish(marker);
             }
             if (robot_pose == "pickup_pose") {
                 // Leave in pickup pose for 5 seconds before hiding
+                ROS_INFO("Picking up and transporting to dropoff...");
                 ros::Duration(5.0).sleep();
                 marker.action = visualization_msgs::Marker::DELETE;
                 marker_pub.publish(marker);
@@ -68,6 +70,7 @@ int main(int argc, char** argv) {
                 marker.pose.position.y = -1.0;
                 marker.pose.orientation.w = -1.0;
                 marker_pub.publish(marker);
+                ROS_INFO("Dropped off");
             }
         }
         r.sleep();

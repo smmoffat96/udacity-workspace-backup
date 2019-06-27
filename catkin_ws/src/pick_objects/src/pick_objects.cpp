@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
     ros::param::set("/robot_pose", "init_pose");
     // Wait 5 sec for move_base action server to come up
     while(!ac.waitForServer(ros::Duration(5.0))) {
-        ROS_INFO("Waiting for the move_base action server to come up");
+        ROS_INFO("Waiting for the move_base action server to come up...");
     }
 
     // Wait 5 seconds
@@ -30,7 +30,7 @@ int main(int argc, char** argv) {
     goal_pick.target_pose.pose.position.y = 1.0;
     goal_pick.target_pose.pose.orientation.w = 1.0;
     // Send the goal position and orientation for the robot to reach
-    ROS_INFO("Sending pickup goal");
+    ROS_INFO("Sending pickup goal...");
     ac.sendGoal(goal_pick);
     // Wait an infinite time for the results
     ac.waitForResult();
@@ -57,7 +57,7 @@ int main(int argc, char** argv) {
     goal_drop.target_pose.pose.position.y = -1.0;
     goal_drop.target_pose.pose.orientation.w = -1.0;
     // Send the goal position and orientation for the robot to reach
-    ROS_INFO("Sending dropoff goal");
+    ROS_INFO("Sending dropoff goal...");
     ac.sendGoal(goal_drop);
     // Wait an infinite time for the results
     ac.waitForResult();
