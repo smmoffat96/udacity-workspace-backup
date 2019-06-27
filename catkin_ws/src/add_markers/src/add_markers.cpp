@@ -31,6 +31,14 @@ int main(int argc, char** argv) {
         marker.color.b = 0.0f;
         marker.color.a = 1.0;
 
+        marker.pose.position.z = 0;
+        marker.pose.orientation.x = 0;
+        marker.pose.orientation.y = 0;
+        marker.pose.orientation.z = 0;
+        marker.pose.orientation.w = 1.0;
+
+        marker.lifetime = ros::Duration();
+
         switch (pick_del_drop)
         {
         // Pick
@@ -40,13 +48,6 @@ int main(int argc, char** argv) {
             // Pickup Pose
             marker.pose.position.x = 0;
             marker.pose.position.y = 0;
-            marker.pose.position.z = 0;
-            marker.pose.orientation.x = 0;
-            marker.pose.orientation.y = 0;
-            marker.pose.orientation.z = 0;
-            marker.pose.orientation.w = 1.0;
-
-            marker.lifetime = ros::Duration();
 
             // Publish the marker
             while (marker_pub.getNumSubscribers() < 1) {
@@ -58,6 +59,7 @@ int main(int argc, char** argv) {
             }
             marker_pub.publish(marker);
             ROS_INFO("Pickup");
+            
 
             pick_del_drop = 1;
 
@@ -65,8 +67,6 @@ int main(int argc, char** argv) {
         // Delete
         case 1:
             marker.action = visualization_msgs::Marker::DELETE;
-
-            marker.lifetime = ros::Duration();
 
             // Publish the marker
             while (marker_pub.getNumSubscribers() < 1) {
@@ -89,13 +89,6 @@ int main(int argc, char** argv) {
             // Dropoff Pose
             marker.pose.position.x = -5;
             marker.pose.position.y = 0;
-            marker.pose.position.z = 0;
-            marker.pose.orientation.x = 0;
-            marker.pose.orientation.y = 0;
-            marker.pose.orientation.z = 0;
-            marker.pose.orientation.w = 1.0;
-
-            marker.lifetime = ros::Duration();
 
             // Publish the marker
             while (marker_pub.getNumSubscribers() < 1) {
@@ -117,6 +110,6 @@ int main(int argc, char** argv) {
             break;
         }
 
-        r.sleep();
+        ros::Duration(5.0).sleep();
     }
 }
