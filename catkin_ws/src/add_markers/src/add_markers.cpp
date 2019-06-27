@@ -30,7 +30,7 @@ int main(int argc, char** argv) {
         marker.color.a = 1.0;
             
         // Marker pose
-        marker.pose.position.x = 2.0;
+        marker.pose.position.x = 1.0;
         marker.pose.position.y = 1.0;
         marker.pose.orientation.w = 1.0;
         
