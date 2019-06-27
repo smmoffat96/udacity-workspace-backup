@@ -3,20 +3,10 @@
 
 add_markers/CMakeFiles/add_markers.dir/src/add_markers.cpp.o
  /home/udacity-workspace-backup/catkin_ws/src/add_markers/src/add_markers.cpp
- /opt/ros/kinetic/include/actionlib_msgs/GoalID.h
- /opt/ros/kinetic/include/actionlib_msgs/GoalStatus.h
  /opt/ros/kinetic/include/geometry_msgs/Point.h
  /opt/ros/kinetic/include/geometry_msgs/Pose.h
- /opt/ros/kinetic/include/geometry_msgs/PoseStamped.h
  /opt/ros/kinetic/include/geometry_msgs/Quaternion.h
  /opt/ros/kinetic/include/geometry_msgs/Vector3.h
- /opt/ros/kinetic/include/move_base_msgs/MoveBaseAction.h
- /opt/ros/kinetic/include/move_base_msgs/MoveBaseActionFeedback.h
- /opt/ros/kinetic/include/move_base_msgs/MoveBaseActionGoal.h
- /opt/ros/kinetic/include/move_base_msgs/MoveBaseActionResult.h
- /opt/ros/kinetic/include/move_base_msgs/MoveBaseFeedback.h
- /opt/ros/kinetic/include/move_base_msgs/MoveBaseGoal.h
- /opt/ros/kinetic/include/move_base_msgs/MoveBaseResult.h
  /opt/ros/kinetic/include/ros/advertise_options.h
  /opt/ros/kinetic/include/ros/advertise_service_options.h
  /opt/ros/kinetic/include/ros/assert.h

@@ -1,6 +1,5 @@
 #include <ros/ros.h>
 #include <visualization_msgs/Marker.h>
-#include <move_base_msgs/MoveBaseAction.h>
 
 int main(int argc, char** argv) {
     ros::init(argc, argv, "add_markers");
@@ -11,7 +10,6 @@ int main(int argc, char** argv) {
     while (ros::ok()) {
         // Define ros params
         std::string robot_pose;
-        move_base_msgs::MoveBaseGoal goal;
         
         visualization_msgs::Marker marker;
         // Set the frame ID and timestamp
@@ -30,12 +28,12 @@ int main(int argc, char** argv) {
         marker.color.g = 1.0f;
         marker.color.b = 0.0f;
         marker.color.a = 1.0;
-        if (ros::param::get("/goal", goal)) {
-            // Marker pose
-            marker.pose.position.x = goal.target_pose.pose.position.x;
-            marker.pose.position.y = goal.target_pose.pose.position.y;
-            marker.pose.orientation.w = goal.target_pose.pose.orientation.w;
-        }
+            
+        // Marker pose
+        marker.pose.position.x = 10.0;
+        marker.pose.position.y = 0.0;
+        marker.pose.orientation.w = 1.0;
+        
         marker.pose.position.z = 0;
         marker.pose.orientation.x = 0;
         marker.pose.orientation.y = 0;
@@ -64,6 +62,10 @@ int main(int argc, char** argv) {
             }
             if (robot_pose == "dropoff_pose") {
                 marker.action = visualization_msgs::Marker::ADD;
+                // Marker pose
+                marker.pose.position.x = -6.0;
+                marker.pose.position.y = -1.0;
+                marker.pose.orientation.w = -1.0;
                 marker_pub.publish(marker);
             }
             ros::Duration(5.0).sleep();

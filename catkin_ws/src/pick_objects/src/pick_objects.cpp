@@ -28,7 +28,6 @@ int main(int argc, char** argv) {
     goal_pick.target_pose.pose.position.y = 0.0;
     goal_pick.target_pose.pose.orientation.w = 1.0;
     // Send the goal position and orientation for the robot to reach
-    ros::param::set("/goal", goal_pick);
     ROS_INFO("Sending pickup goal");
     ac.sendGoal(goal_pick);
     // Wait an infinite time for the results
@@ -45,7 +44,7 @@ int main(int argc, char** argv) {
     }
 
     // Wait 5 seconds
-    ros::Duration(5.0)::sleep();
+    ros::Duration(5.0).sleep();
 
     move_base_msgs::MoveBaseGoal goal_drop;
     // Set up the frame parameters
@@ -56,7 +55,6 @@ int main(int argc, char** argv) {
     goal_drop.target_pose.pose.position.y = -1.0;
     goal_drop.target_pose.pose.orientation.w = -1.0;
     // Send the goal position and orientation for the robot to reach
-    ros::param::set("/goal", goal_drop);
     ROS_INFO("Sending dropoff goal");
     ac.sendGoal(goal_drop);
     // Wait an infinite time for the results
