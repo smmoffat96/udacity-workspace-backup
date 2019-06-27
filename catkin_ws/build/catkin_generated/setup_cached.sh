@@ -8,4 +8,3 @@
 
 # modified environment variables
 export PWD="/home/udacity-workspace-backup/catkin_ws/build"
-export PYTHONPATH="/home/udacity-workspace-backup/catkin_ws/devel/lib/python2.7/dist-packages:/opt/ros/kinetic/lib/python2.7/dist-packages:/home/udacity-workspace-backup/catkin_ws/devel/lib/python3/dist-packages"

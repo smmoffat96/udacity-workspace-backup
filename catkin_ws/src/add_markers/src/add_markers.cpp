@@ -21,10 +21,7 @@ int main(int argc, char** argv) {
         marker.ns = "add_markers";
         marker.id = 0;
 
-        // Set the marker type. Initially this is a CUBE and cycles between that and a SPHERE, an ARROW, and a CYLINDER
         marker.type = shape;
-
-        // Set the marker action. Options are ADD, DELETE, and DELETEALL.
         marker.action = visualization_msgs::Marker::ADD;
 
         // Set the pose of the marker. This is a full 6DOF pose relative to the frame/time specified in the header
@@ -37,9 +34,9 @@ int main(int argc, char** argv) {
         marker.pose.orientation.w = 1.0;
 
         // Set the scale of the marker -- 1x1x1 here means 1m on a side
-        marker.scale.x = 1.0;
-        marker.scale.y = 1.0;
-        marker.scale.z = 1.0;
+        marker.scale.x = 0.5;
+        marker.scale.y = 0.5;
+        marker.scale.z = 0.5;
 
         // Set the color -- be sure to set alpha to something non-zero!
         marker.color.r = 0.0f;
@@ -47,7 +44,7 @@ int main(int argc, char** argv) {
         marker.color.b = 0.0f;
         marker.color.a = 1.0;
 
-        marker.lifetime = ros::Duration();
+        marker.lifetime = ros::Duration(5);
 
         // Publish the marker
         while (marker_pub.getNumSubscribers() < 1) {
@@ -58,7 +55,7 @@ int main(int argc, char** argv) {
             sleep(1);
         }
         marker_pub.publish(marker);
-
+        
         // Hide the marker
         //marker.action = visualization_msgs::Marker::DELETE;
 
@@ -86,7 +83,7 @@ int main(int argc, char** argv) {
             sleep(1);
         }
         marker_pub.publish(marker);
-
+        */
         r.sleep();
     }
 }
