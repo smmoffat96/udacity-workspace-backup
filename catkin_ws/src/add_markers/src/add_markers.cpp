@@ -1,5 +1,6 @@
 #include <ros/ros.h>
 #include <visualization_msgs/Marker.h>
+#include <move_base_msgs/MoveBaseAction.h>
 
 int main(int argc, char** argv) {
     ros::init(argc, argv, "add_markers");
@@ -7,11 +8,11 @@ int main(int argc, char** argv) {
     ros::Rate r(1);
     ros::Publisher marker_pub = n.advertise<visualization_msgs::Marker>("visualization_marker", 1);
 
-    // Define ros params
-    std::string robot_pose;
-    geometry_msgs::Pose goal;
-
     while (ros::ok()) {
+        // Define ros params
+        std::string robot_pose;
+        move_base_msgs::MoveBaseGoal goal;
+        
         visualization_msgs::Marker marker;
         // Set the frame ID and timestamp
         marker.header.frame_id = "map";
@@ -29,13 +30,12 @@ int main(int argc, char** argv) {
         marker.color.g = 1.0f;
         marker.color.b = 0.0f;
         marker.color.a = 1.0;
-
-        // Marker pose
-        ros::param::get("/goal", goal);
-        marker.pose.position.x = goal.position.x;
-        marker.pose.position.y = goal.position.y;
-        marker.pose.orientation.w = goal.orientation.w;
-
+        if (ros::param::get("/goal", goal)) {
+            // Marker pose
+            marker.pose.position.x = goal.target_pose.pose.position.x;
+            marker.pose.position.y = goal.target_pose.pose.position.y;
+            marker.pose.orientation.w = goal.target_pose.pose.orientation.w;
+        }
         marker.pose.position.z = 0;
         marker.pose.orientation.x = 0;
         marker.pose.orientation.y = 0;
@@ -54,20 +54,20 @@ int main(int argc, char** argv) {
 
         marker.action = visualization_msgs::Marker::ADD;
         marker_pub.publish(marker);
+        if (ros::param::get("/robot_pose", robot_pose)) {
+            if (robot_pose == "pickup_pose") {
+                // Leave in pickup pose for 5 seconds before hiding
+                ros::Duration(5.0).sleep();
+                marker.action = visualization_msgs::Marker::DELETE;
+                marker_pub.publish(marker);
 
-        ros::param::get("/robot_pose", robot_pose);
-
-        if (robot_pose == "pickup_pose") {
-            // Leave in pickup pose for 5 seconds before hiding
+            }
+            if (robot_pose == "dropoff_pose") {
+                marker.action = visualization_msgs::Marker::ADD;
+                marker_pub.publish(marker);
+            }
             ros::Duration(5.0).sleep();
-            marker.action = visualization_msgs::Marker::DELETE;
-            marker_pub.publish(marker);
-
         }
-        if (robot_pose == "dropoff_pose") {
-            marker.action = visualization_msgs::Marker::ADD;
-            marker_pub.publish(marker);
-        }
-        ros::Duration(5.0).sleep();
+        r.sleep();
     }
 }

@@ -20,7 +20,6 @@ int main(int argc, char** argv) {
     }
 
     move_base_msgs::MoveBaseGoal goal_pick;
-    ros::param::set("/goal", goal_pick);
     // Set up the frame parameters
     goal_pick.target_pose.header.frame_id = "map";
     goal_pick.target_pose.header.stamp = ros::Time::now();
@@ -29,24 +28,26 @@ int main(int argc, char** argv) {
     goal_pick.target_pose.pose.position.y = 0.0;
     goal_pick.target_pose.pose.orientation.w = 1.0;
     // Send the goal position and orientation for the robot to reach
+    ros::param::set("/goal", goal_pick);
     ROS_INFO("Sending pickup goal");
     ac.sendGoal(goal_pick);
     // Wait an infinite time for the results
     ac.waitForResult();
 
     // Check if the robot reached its goal
-    if(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED)
+    if(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED) {
         ROS_INFO("The robot reached the pickup zone");
         ros::param::set("/robot_pose", "pickup_pose");
-    else
+    }
+    else {
         ROS_INFO("The robot failed to reach the pickup zone");
         ros::param::set("/robot_pose", "pickup_pose_failed");
+    }
 
     // Wait 5 seconds
     ros::Duration(5.0)::sleep();
 
     move_base_msgs::MoveBaseGoal goal_drop;
-    ros::param::set("/goal", goal_drop);
     // Set up the frame parameters
     goal_drop.target_pose.header.frame_id = "map";
     goal_drop.target_pose.header.stamp = ros::Time::now();
@@ -55,18 +56,21 @@ int main(int argc, char** argv) {
     goal_drop.target_pose.pose.position.y = -1.0;
     goal_drop.target_pose.pose.orientation.w = -1.0;
     // Send the goal position and orientation for the robot to reach
+    ros::param::set("/goal", goal_drop);
     ROS_INFO("Sending dropoff goal");
     ac.sendGoal(goal_drop);
     // Wait an infinite time for the results
     ac.waitForResult();
 
     // Check if the robot reached its goal
-    if(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED)
+    if(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED) {
         ROS_INFO("The robot reached the dropoff zone");
         ros::param::set("/robot_pose", "dropoff_pose");
-    else
+    }
+    else {
         ROS_INFO("The robot failed to reach the dropoff zone");
         ros::param::set("/robot_pose", "dropoff_pose_failed");
+    }
 
     return 0;
 }
